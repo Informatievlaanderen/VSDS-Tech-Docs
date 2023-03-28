@@ -2,7 +2,7 @@
 sort: 6
 ---
 
-# LDES CONNECTORS
+# [LDES Interactions](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions/tree/main/ldi-core)
 
 ## Version Object Creator
 
