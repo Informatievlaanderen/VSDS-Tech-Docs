@@ -17,6 +17,14 @@ To help data publishers make their datasets available as LDES, an open-source LD
 The LDES server is available as on open-source building block on [GitHub](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)
 ```
 
+
+
+
+
+
+
+
+
 ## Ingesting sources (HTTP in)
 
 The LDES server is able to receive data via HTTP ingestion. Specifically, the server expects a single object (member) to be sent as input via a POST request. If the dataset still contains state objects, each of these must first be converted to a version object before being ingested in the server. This essential step ensures the ingested objects comply with the [LDES definition](/docs/Specification.md#what-is-a-linked-data-event-stream).
