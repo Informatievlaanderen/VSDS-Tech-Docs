@@ -8,7 +8,7 @@ This sections provides an overview of how data consumer can replicate data to di
 
 ## Triple stores
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/graphdb.png" width="80%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/graphdb.png" width="80%" text-align="center"></p>
 
 The LDES2Service toolbox contains an "RDF4J Put" processor, allowing to ingest members in triple stores that support the RDF4J API.
 
@@ -36,7 +36,7 @@ You can find more information in [this article](https://medium.com/towards-artif
 
 ## PostgreSQL & TimescaleDB
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/timescaledb.png"  width="80%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/timescaledb.png"  width="80%" text-align="center"></p>
 
 In this [Github repo](https://github.com/samuvack/LDES2TimescaleDB), you will find a docker file with the configuration of TimescaleDB and Apache NiFi. A workflow is configured in Apache NiFi to replicate LDES members into TimescaleDB. You will find an Apache NiFi configuration file containing the necessary data flow. This Apache NiFi data flow works also for storing LDES members in a PostgreSQL database.
 
@@ -67,7 +67,7 @@ You can find more information in [this article](https://medium.com/towards-artif
 
 ## PowerBI
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/powerbi.png"  width="80%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/powerbi.png"  width="80%" text-align="center"></p>
 
 In this [Github repo](https://github.com/Informatievlaanderen/VSDS-LDESDemo/tree/master/geoserver), you will find a docker file with the configuration of PostgreSQL, Apache NiFi and a configuration file for PowerBI.
 
@@ -100,7 +100,7 @@ You can find more information in [this article](https://medium.com/p/5cd8379d32)
 
 ## GeoServer
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/geoserver.png"  width="80%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/geoserver.png"  width="80%" text-align="center"></p>
 
 In this [Github repo](https://github.com/Informatievlaanderen/VSDS-LDESDemo/tree/master/geoserver), you will find a docker file with the configuration of PostgreSQL, Apache NiFi and Geoserver.
 
@@ -134,7 +134,7 @@ You can find more information in [this article](https://medium.com/geekculture/e
 
 ## LDES to QGIS
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/qgis.png"  width="80%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/qgis.png"  width="80%" text-align="center"></p>
 
 1. Follow the steps from [LDES to PostgreSQL/TimescaleDB](https://informatievlaanderen.github.iodocs/LDES2Service.html#data-science-ldes-to-postgresqltimescaledb)
 
@@ -149,7 +149,7 @@ You can find more information in [this article](https://medium.com/geekculture/v
 This is a prototype!!
 ```
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/ml.png"  width="80%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/ml.png"  width="80%" text-align="center"></p>
 
 In this [Github repo](https://github.com/samuvack/ML-LDES-server), you will find a docker file with the configuration of PostgreSQL and Apache NiFi.
 

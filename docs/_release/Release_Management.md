@@ -86,5 +86,5 @@ Here you can find the [**archived** LDES connector repository](https://github.co
 
 {: .highlight }
 To get informed when a new version of a building block is released, go to 'watch'
-![](https://samuvack.github.io/Techdoc/images/releases.png)
+![](https://samuvack.github.io/VSDS-Tech-Docs/images/releases.png)
 On the [notifications](https://github.com/notifications) page, you can see your personal notification subscribtions

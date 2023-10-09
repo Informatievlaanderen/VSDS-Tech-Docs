@@ -8,7 +8,7 @@ sort: 4
 
 The Linked Data Event Stream (LDES) [server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) is a configurable component that can be used to ingest, store, and (re-)publish one or multiple Linked Data Event Stream(s). The open-source LDES server is built in the context of the [VSDS project](https://www.vlaanderen.be/vlaamse-smart-data-space-portaal) to exchange (Open) Data easily.
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/LDES%20server.png" width="60%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/LDES%20server.png" width="60%" text-align="center"></p>
 
 The server can be configured to meet the organisation's specific needs. Functionalities include **retention policy**, **fragmentation**, **deletion**, **create a snapshot** and **pagination** for managing and processing large amounts of data more efficiently and ensuring the efficient use of storage.
 
@@ -83,7 +83,7 @@ For more information about the SHACL shape and its structure, go to [here](https
 
 To reduce the volume of data that consumers need to replicate or to speed up certain queries, the LDES server can be configured to create several fragmentations. Fragmentations are similar to indexes in databases but then published on the Web. The RDF predicate on which the fragmentation must be applied is defined through configuration.
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/fragmentation.png" width="60%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/fragmentation.png" width="60%" text-align="center"></p>
 
 The fragmenting of a Linked Data Event Stream (LDES) is a crucial technique for managing and processing large amounts of data more efficiently. There are three main methods of fragmentation: **geospatial**, **time-based**, and **substring** fragmentation.
 
@@ -199,7 +199,7 @@ Note that this is all lowercase.
 
 [Time-based fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-timebased) has not yet been implemented.
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/temporal.png" width="60%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/temporal.png" width="60%" text-align="center"></p>
 
 Example of a time-based fragmentation configuration file
 
@@ -230,7 +230,7 @@ next fragment is created with a new current timestamp.
 
 Consider the scenario where the address registry is published as an LDES that using partitioning. In such a case, data consumers are required to replicate the entire linear set of fragments, despite only being interested in a smaller subset of the dataset. For instance, the city of Brussels may only require addresses within its geographical region and is not interested in other addresses. However, with the partitioned LDES, they would need to iterate through all the fragments and filter the LDES members (address version objects) on the client-side. By utilising geospatial fragmentation, the data can be divided into smaller pieces (tiles) based on geographical location. This facilitates filtering on the fragment level (tiles) and allows for processing and analysis of data within specific geospatial tiles.
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/geospatial.png" width="60%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/geospatial.png" width="60%" text-align="center"></p>
 
 The geospatial fragmentation supported by the LDES server is based on the ["Slippy Maps" algorithm](https://wiki.openstreetmap.org/wiki/Slippy_map). The fragmentation expects a `zoom level` parameter which is used by the algorithm to divide the "world" into tiles. The number of tiles if 2^2n^ (where n = zoom level). The second expected parameter is an `RDF predicate`, indicating on which property of the LDES member the fragmentation should be applied. More information about the algorithm used to apply a geospatial fragmentation can be found [here](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-geospatial).
 
@@ -361,7 +361,7 @@ The LDES server typically adds an LDES member to the "lowest" possible fragment,
 
 A [retention policy](https://github.com/Informatievlaanderen/VSDS-LDESServer4J#example-retention) determines how long data will be kept and stored. Its purpose is to ensure the efficient use of storage resources by controlling data growth over time. Setting a retention policy per view to minimise storage fill-up is possible.
 
-<p align="center"><img src="https://samuvack.github.io/Techdoc/images/retention_policy.png" width="60%" text-align="center"></p>
+<p align="center"><img src="https://samuvack.github.io/VSDS-Tech-Docs/images/retention_policy.png" width="60%" text-align="center"></p>
 
 Implementing a retention policy helps organisations maintain control over their data growth and ensure that storage resources are used optimally. The policy specifies the maximum duration that data should be kept.
 
@@ -706,7 +706,7 @@ Further documentation can be found on the internal Swagger API available at `/v1
 
 ### Setting up ACM/IDM
 
-The Access and User Management (ACM) and Identity Management (IDM) of the Flemish government are products that allow you to manage the access and identity of data users that consume the published LDES. 
+The Access and User Management (ACM) and Identity Management (IDM) of the Flemish government are products that allow you to manage the access and identity of data users that consume the published LDES.
 
 This ADM/IDM security option through an API gateway, protects LDES Collections and Views from unauthorized access, recognizing the importance of data security. The API gateway serves as a security layer, managing access and applying authentication methods, such as ACM/IDM, reducing the chance of exposing sensitive data to unwanted parties.
 
@@ -715,9 +715,6 @@ ACM/IDM verifies the identity and permissions of users and devices. This improve
 During the ACM/IDM Standard integration process, you will work alongside the ACM/IDM integration team of the Flemish government to follow the standard connection procedure. One of our analysts will guide you through this process via an integration file, where agreements and requirements are documented. This procedure is followed for both new files and modifications to existing files.
 
 For more information, you can find it [here](https://www.vlaanderen.be/acm-idm-standaard-aansluitingsproces)
-
-
-
 
 ### OpenAPI swagger UI
 
