@@ -710,13 +710,15 @@ ACM/IDM verifies the identity and permissions of users and devices. This improve
 During the ACM/IDM Standard integration process, you will work alongside the ACM/IDM integration team of the Flemish government to follow the standard connection procedure. One of our analysts will guide you through this process via an integration file, where agreements and requirements are documented. This procedure is followed for both new files and modifications to existing files.
 
 For more information, you can find it here:
-https://www.vlaanderen.be/acm-idm-standaard-aansluitingsproces
+[](https://www.vlaanderen.be/acm-idm-standaard-aansluitingsproces)
 
 
 
 
-#### OpenAPI swagger UI
+### OpenAPI swagger UI
 
 Via the OpenAPI Specification it becomes possible discover how the LDES server API works, how to configure the LDES server, etc., in a user-friendly manner.
+
+As an example, the Swagger API docs can be find on: [](https://onboarding1.smartdataspace.beta-vlaanderen.be/v1/swagger-ui/index.html). The Swagger API should look like this:
 
 {% include swagger2.html %}
