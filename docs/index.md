@@ -6,25 +6,7 @@ nav_order: 0
 
 # VSDS Technical Documentation
 
-## Introduction
+Linked Data Event Streams (LDES) apply - as the term implies - the concept of linked data to data streams. LDES is a technical standard that allows data to be exchanged between silos sustainably and cost-effectively using domain-specific ontology for fast and slowly changing data streams.
 
-The Opensource building blocks Linked Data Interactions project is an effort to make interactions with Linked Data more fluently by providing easy building blocks. 
+A wealth of information describes how to publish and consume LDES in this technical documentation.
 
-This project was created in function of the [VSDS project]
-
-## Supported Frameworks
-
-Currently, we support 2 frameworks to use these building blocks in:
-* [Linked Data Interactions Orchestrator](ldio): A lightweight application maintained by the LDI team.
-* [Apache Nifi][Apache NiFi]: A powerful system to easily process and distribute data
-
-### Component support over frameworks
-
-As the LDI team is rather small and focused on supporting the [VSDS project], we sometimes have to postpone full 
-integration of our building blocks in all supported frameworks.
-
-However, since the LDI project is open source, feel free to contribute and/or create issues at our [GitHub project][Linked Data Interactions]
-
-[VSDS project]: https://www.vlaanderen.be/vlaamse-smart-data-space-portaal
-[Apache NiFi]: https://nifi.apache.org/
-[Linked Data Interactions]: https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions
