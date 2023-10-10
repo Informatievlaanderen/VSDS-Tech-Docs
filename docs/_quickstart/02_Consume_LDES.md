@@ -1,11 +1,11 @@
 ---
 title: Consume a LDES
-parent: quickstart
+parent: Quick start
 layout: home
 sort: 0
 ---
 
-# LDES2Service
+# Consume a LDES
 
 ```note
 ***Please Note!***
