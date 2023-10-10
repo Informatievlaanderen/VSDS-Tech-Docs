@@ -47,6 +47,10 @@ collections:
   quickstart:
     permalink: "/:collection/:path"
     output: true
+  release:
+    permalink: "/:collection/:path"
+    output: true
+'''
   core:
     permalink: "/:collection/:path"
     output: true
@@ -56,7 +60,7 @@ collections:
   ldi-nifi:
     permalink: "/:collection/:path"
     output: true
-
+'''
 
 # Enable or disable the site search
 # Supports true (default) or false
