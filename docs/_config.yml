@@ -86,12 +86,6 @@ just_the_docs:
       name: Introduction to LDES
     quickstart:
       name: Quickstart
-    core:
-      name: Linked Data Interactions Core Building Blocks
-    ldio:
-      name: Linked Data Interactions Orchestrator
-    ldi-nifi:
-      name: Linked Data Interactions for Apache NiFi
     release:
       name: Release Management
 
