@@ -17,19 +17,9 @@ callouts:
 
 # External navigation links
 nav_external_links:
-  - title: Linked Data Interactions Core Building Blocks
+  - title: Linked Data Interactions
     parent: core
-    url: https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/core/index
-    hide_icon: false # set to true to hide the external link icon - defaults to false
-    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
-  - title: Linked Data Interactions Orchestrator
-    parent: ldio
-    url: https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/index
-    hide_icon: false # set to true to hide the external link icon - defaults to false
-    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
-  - title: Linked Data Interactions For Apache Nifi
-    parent: ldi-nifi
-    url: https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldi-nifi/index
+    url: https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions
     hide_icon: false # set to true to hide the external link icon - defaults to false
     opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
 
