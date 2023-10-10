@@ -14,8 +14,27 @@ callouts:
     title: Tip
     color: green
 
-aux_links:
-  VSDS portal: https://www.vlaanderen.be/vlaamse-smart-data-space-portaal
+
+# External navigation links
+nav_external_links:
+  - title: Linked Data Interactions Core Building Blocks
+    url: https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/core/index
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
+  - title: Linked Data Interactions Orchestrator
+    url: https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/index
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
+  - title: Linked Data Interactions For Apache Nifi
+    url: https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldi-nifi/index
+    hide_icon: false # set to true to hide the external link icon - defaults to false
+    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
+
+
+# Google Analytics Tracking (optional)
+# Supports a CSV of tracking ID strings (eg. "UA-1234567-89,G-1AB234CDE5")
+ga_tracking: G-9F4LJXRX6T
+ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
 # Define Jekyll collections
 collections:
