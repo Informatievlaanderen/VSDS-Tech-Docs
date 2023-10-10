@@ -50,17 +50,7 @@ collections:
   release:
     permalink: "/:collection/:path"
     output: true
-'''
-  core:
-    permalink: "/:collection/:path"
-    output: true
-  ldio:
-    permalink: "/:collection/:path"
-    output: true
-  ldi-nifi:
-    permalink: "/:collection/:path"
-    output: true
-'''
+
 
 # Enable or disable the site search
 # Supports true (default) or false
