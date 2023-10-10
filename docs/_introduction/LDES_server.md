@@ -14,9 +14,9 @@ The server can be configured to meet the organisation's specific needs. Function
 
 ![](../images/scalableApplications.png)
 
-```note
+{: .note}
 The LDES server is available as on open-source building block on [GitHub](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)
-```
+
 
 ## Setting up the LDES Server during startup process
 
@@ -71,9 +71,9 @@ rest:
 
 The LDES specification prescribes that each LDES must link to a SHACL shape, providing a machine-readable definition of the members in the collection. If a SHACL shape was provided on startup, the LDES server reads it before the ingestion process starts and the SHACL shape is used to validate the ingested members. Only valid members are ingested in the LDES server. When starting the server, it is possible to provide a SHACL shape via through an RDF file. At last, the SHACL shape is also published as part of the LDES on the Web.
 
-```note
+{: .note}
 SHACL stands for Shapes Constraint Language and is used to define a set of constraints which are used to verify to conformity of RDF data with these constraints.
-```
+
 
 The SHACL shape specifies the expected properties of an LDES members and the constraints that must be followed to ensure the LDES member adheres to the expected structure and semantics. It defines properties such as required properties, allowed property values, and the data types expected for the properties.
 
@@ -103,7 +103,7 @@ The expected parameter to apply a partioning is a `member limit`, indicating the
 name: “pagination”
 config:
   memberLimit: { Mandatory: member limit > 0 }
-```
+````
 
 **Algorithm**
 
@@ -185,9 +185,9 @@ If this is the first member of the collection it would be added to fragment 'k' 
 
 In a scenario where there are already 10 addresses starting with 'k' and only 2 with 'ka', it would be added to http://localhost:8080/addresses/by-name?substring=ka
 
-```note
+{: .note}
 Note that this is all lowercase.
-```
+
 
 <br>
 
@@ -552,9 +552,9 @@ This can be updated by performing a PUT operation with an updated DCAT catalog o
 
 Finally, to delete the catalog, a DELETE request can be performed at `/admin/api/v1/dcat/{catalogID}`
 
-```note
+{: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
-```
+
 
 ### Setting up a collection
 
@@ -579,13 +579,13 @@ server:exampleCollection a ldes:EventStream ;
         sh:closed "true";
         a sh:NodeShape ;
     ] .
-```
+````
 
 This collection can be deleted by performing a DELETE request on `/admin/api/v1/eventstreams/{collectionName}`
 
-```note
+{: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
-```
+
 
 #### Setting up metadata for collection
 
@@ -624,9 +624,9 @@ To update this entry, a PUT request can be performed on `/admin/api/v1/eventstre
 
 Similarly, a DELETE request can be performed on `/admin/api/v1/eventstreams/{collectionName}/dcat`
 
-```note
+{: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
-```
+
 
 ### Setting up a view
 
@@ -650,11 +650,11 @@ viewName:description
 server:view1
         <https://w3id.org/tree#viewDescription>
                 <http://localhost:8080/name1/view1/description> .
-```
+````
 
-```note
+{: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
-```
+
 
 #### Setting up metadata for view
 
@@ -700,9 +700,9 @@ viewName:description
 
 Similarly, a DELETE request can be performed on `/admin/api/v1/eventstreams/{collectionName}/views/{viewName}/dcat`
 
-```note
+{: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
-```
+
 
 ### Setting up ACM/IDM
 
@@ -723,3 +723,4 @@ Via the OpenAPI Specification it becomes possible discover how the LDES server A
 As an example, the Swagger API docs can be find [here](https://onboarding1.smartdataspace.beta-vlaanderen.be/v1/swagger-ui/index.html). The Swagger API should look like this:
 
 {% include swagger2.html %}
+```

@@ -43,9 +43,9 @@ In a nutshell, there are several reasons why there was a need to develop the Lin
 
 As defined above, an LDES is a collection of members or _immutable objects_. The LDES spec works both for fast moving data and slow moving data. An example of fast moving data, such as sensor observations, is shown in the example below.
 
-```note
+{: .note}
 The base URI for LDES is https://w3id.org/ldes#, with the preferred prefix being `ldes`.
-```
+
 
 ```turtle
 @prefix ldes: <http://w3id.org/ldes#> .
@@ -63,9 +63,9 @@ The base URI for LDES is https://w3id.org/ldes#, with the preferred prefix being
                sosa:hasSimpleResult "..." .
 ```
 
-```note
+{: .note}
 The observation entity (`<observation1>`) is considered to be immutable, and its existing identifiers can be utilized as such.
-```
+
 
 The specification indicates that an `ldes:EventStream` **should** have the following properties:
 
@@ -98,7 +98,7 @@ As stated above, an LDES can also publish a slow moving dataset, such as street 
 <streetname1-v2> rdfs:label "Station Square" ;
                dcterms:isVersionOf <streetname1> ;
                dcterms:created "2021-01-01T00:10:00Z"^^xsd:dateTime .
-```
+````
 
 This example introduces the concept of **versions**, because certain entities, such as street names, do not understand the concept of time. In this example, versions of street names are published, ensuring the immutability of the LDES members. When publishing versions of entities, extra information (`dcterms:isVersionOf`) must be added in order to be able to link these version to an entity. Not introducing versions for entities that do not understand the concept of time would lead to an incorrect implementation of the LDES spec, as shown below.
 
@@ -123,9 +123,9 @@ This example introduces the concept of **versions**, because certain entities, s
 
 In this example, the entity with HTTP URI `<streetname1>` is not longer immutable, which is a direct conflict with the definition of the LDES spec.
 
-```note
+{: .note}
 It is important to note that once a client processes a member of an LDES, it should never have to process it again. Therefore, a Linked Data Event Stream client can maintain a list of already processed member IRIs in a cache. A reference implementation of a client is available as an open-source [SDK](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions/tree/main/ldi-core#1-ldes-client) as part of the Flanders Smart Data Space initiative.
-```
+
 
 <p align="center"><img src="/VSDS-Tech-Docs/images/versioning.png" width="60%" text-align="center"></p>
 
@@ -162,9 +162,9 @@ The most basic fragmentation of an LDES is called `partitioning`, which creates 
 
 Each relation to another fragment is semantically described, helping clients to decide whether or not it is interesting to follow the relation.
 
-```note
+{: .note}
 The LDES server building block implements various fragmentations. More information can be found [here](https://informatievlaanderen.github.iodocs/LDES_server.html#fragmentation).
-```
+
 
 ### Retention policy
 
@@ -172,9 +172,9 @@ A retention policy is a set of rules determining how long data should be kept or
 
 Currently, the LDES spec defines two retention policies, a time-based an a version-based retention policy. More information about the retention policies can be found in the [spec](https://semiceu.github.io/LinkedDataEventStreams/#retention).
 
-```note
+{: .note}
 The LDES Server buildling block implements a time-based retention policy. More information can be found [here](https://informatievlaanderen.github.iodocs/LDES_server.html#retention-policy).
-```
+
 
 ## SHACL
 
@@ -182,14 +182,14 @@ The LDES Server buildling block implements a time-based retention policy. More i
 
 By incorporating SHACL shapes, LDES provides a powerful tool for ensuring data quality and consistency, making it a reliable and trustworthy source of data for various applications. By defining a SHACL shape for the LDES, data producers can ensure that the members they add to the LDES adhere to the required structure, while data consumers can use the shape to validate and reason about the data they receive.
 
-```note
-As a consequence of the immutability of the members, this shape *may* evolve, but it **must** always be backwards compatible to the earlier version. When the new shape is not backwards compatible, a new LDES must be created.
-```
+{: .note}
+As a consequence of the immutability of the members, this shape _may_ evolve, but it **must** always be backwards compatible to the earlier version. When the new shape is not backwards compatible, a new LDES must be created.
+
 
 ## DCAT
 
 [DCAT](https://www.w3.org/TR/vocab-dcat-3/) is an RDF vocabulary for data catalogues on the Web, enabling easy interoperability and discoverability of metadata for datasets, data services, and portals. It standardises properties for describing datasets, access information, and data services. By using DCAT, publishers can increase their datasets' exposure and facilitate data sharing and reuse.
 
-```note
+{: .note}
 The LDES Server building block allows to pass a static RDF file on startup, containing DCAT to describe the LDES(es). The server reads and publishes the content.
-```
+

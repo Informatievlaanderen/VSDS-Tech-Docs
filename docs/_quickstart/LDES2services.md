@@ -145,9 +145,9 @@ You can find more information in [this article](https://medium.com/geekculture/v
 
 ## Machine Learning (ML-LDES server)
 
-```note
+{: .note}
 This is a prototype!!
-```
+
 
 <p align="center"><img src="/VSDS-Tech-Docs/images/ml.png"  width="80%" text-align="center"></p>
 
@@ -181,3 +181,4 @@ A data flow is configured in Apache NiFi to convert these data streams into Post
 
 {: .highlight }
 You can find more information in [this](https://medium.com/towards-artificial-intelligence/incremental-machine-learning-for-linked-data-event-streams-e5441cb4c65a) and [this article](https://medium.com/towards-artificial-intelligence/forecasting-linked-data-event-streams-on-the-internet-of-water-826171085bae)
+```
