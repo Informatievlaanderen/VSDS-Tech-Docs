@@ -1,5 +1,5 @@
 ---
-title: Consume a LDES
+title: Consume an LDES
 parent: Quick start
 layout: home
 sort: 0
