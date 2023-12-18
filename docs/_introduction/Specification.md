@@ -163,7 +163,7 @@ The most basic fragmentation of an LDES is called `partitioning`, which creates 
 Each relation to another fragment is semantically described, helping clients to decide whether or not it is interesting to follow the relation.
 
 {: .note}
-The LDES server building block implements various fragmentations. More information can be found [here](https://informatievlaanderen.github.iodocs/LDES_server.html#fragmentation).
+The LDES server building block implements various fragmentations. More information can be found [here](https://informatievlaanderen.github.io/VSDS-LDESServer4J/configuration/fragmentations/index#ldes-fragmentations).
 
 
 ### Retention policy
@@ -173,7 +173,7 @@ A retention policy is a set of rules determining how long data should be kept or
 Currently, the LDES spec defines two retention policies, a time-based an a version-based retention policy. More information about the retention policies can be found in the [spec](https://semiceu.github.io/LinkedDataEventStreams/#retention).
 
 {: .note}
-The LDES Server buildling block implements a time-based retention policy. More information can be found [here](https://informatievlaanderen.github.iodocs/LDES_server.html#retention-policy).
+The LDES Server buildling block implements a time-based retention policy. More information can be found [here](https://informatievlaanderen.github.io/VSDS-Tech-Docs/introduction/Specification#retention-policy).
 
 
 ## SHACL

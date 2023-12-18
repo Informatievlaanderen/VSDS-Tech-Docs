@@ -22,7 +22,7 @@ The LDES server is available as on open-source building block on [GitHub](https:
 
 ### Ingesting sources (HTTP in)
 
-The LDES server is able to receive data via HTTP ingestion. Specifically, the server expects a single object (member) to be sent as input via a POST request. If the dataset still contains state objects, each of these must first be converted to a version object before being ingested in the server. This essential step ensures the ingested objects comply with the [LDES definition](https://informatievlaanderen.github.iodocs/Specification.html#what-is-a-linked-data-event-stream).
+The LDES server is able to receive data via HTTP ingestion. Specifically, the server expects a single object (member) to be sent as input via a POST request. If the dataset still contains state objects, each of these must first be converted to a version object before being ingested in the server. This essential step ensures the ingested objects comply with the [LDES definition](https://informatievlaanderen.github.io/VSDS-Tech-Docs/introduction/Specification#what-is-a-linked-data-event-stream).
 
 Once the objects in the dataset are LDES-compliant members (whether or not after conversion to a version object) and the LDES member has been added to the LDES server, the server can effortlessly publish the LDES member as part of the LDES.
 
@@ -77,7 +77,7 @@ SHACL stands for Shapes Constraint Language and is used to define a set of const
 
 The SHACL shape specifies the expected properties of an LDES members and the constraints that must be followed to ensure the LDES member adheres to the expected structure and semantics. It defines properties such as required properties, allowed property values, and the data types expected for the properties.
 
-For more information about the SHACL shape and its structure, go to [here](https://informatievlaanderen.github.iodocs/Specification.html#shacl). More information on how to provide an RDF file, containing a SHACL shape, to the LDES server can be found [here](https://github.com/Informatievlaanderen/VSDS-LDESServer4J#example-serving-static-content).
+For more information about the SHACL shape and its structure, go to [here](https://informatievlaanderen.github.io/VSDS-Tech-Docs/introduction/Specification#shacl). More information on how to provide an RDF file, containing a SHACL shape, to the LDES server can be found [here](https://github.com/Informatievlaanderen/VSDS-LDESServer4J#example-serving-static-content).
 
 ### Fragmentation
 
@@ -197,7 +197,7 @@ Note that this is all lowercase.
 
 #### Time-based fragmentation
 
-[Time-based fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-timebased) has not yet been implemented.
+[Time-based fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-timebased-hierarchical) has not yet been implemented.
 
 <p align="center"><img src="/VSDS-Tech-Docs/images/temporal.png" width="60%" text-align="center"></p>
 
