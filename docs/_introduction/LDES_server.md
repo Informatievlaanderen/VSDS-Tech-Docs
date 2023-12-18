@@ -135,63 +135,9 @@ config:
 
 #### Substring fragmentation
 
-[Substring fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-substring) involves dividing the data stream into smaller pieces based on specific substrings, or patterns, within the data.
-
-Example of substring fragmentation configuration file
-
-```yaml
-name: “substring”
-config:
-  fragmenterProperty: { Defines which property will be used for bucketizing }
-  memberLimit: { member limit > 0 }
-```
-
-**Example**
-
-Example properties:
-
-```yaml
-name: "substring"
-config:
-  fragmenterProperty: "https://data.vlaanderen.be/ns/adres#volledigAdres"
-  memberLimit: 10
-```
-
-With following example input:
-
-```turtle
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-<https://data.vlaanderen.be/id/adres/1781020/2023-02-15T10:14:36.002Z>
-  <https://data.vlaanderen.be/ns/adres#isVerrijktMet> [
-      <https://data.vlaanderen.be/ns/adres#volledigAdres> "Kazernestraat 15, 9160 Lokeren"@nl
-   ] ;
-  prov:generatedAtTime "2023-02-15T10:14:36.002Z"^^xsd:dateTime ;
-  a <https://data.vlaanderen.be/ns/adres#Adres> .
-```
-
-The selected object would be "Kazernestraat 15, 9160 Lokeren".
-
-The bucket of substrings would be:
-
-- K
-- Ka
-- Kaz
-- ...
-- Kazernestraat 15, 9160 Lokeren
-
-If this is the first member of the collection it would be added to fragment 'k' and available at http://localhost:8080/addresses/by-name?substring=k and not in ka or any other substring fragment.
-
-In a scenario where there are already 10 addresses starting with 'k' and only 2 with 'ka', it would be added to http://localhost:8080/addresses/by-name?substring=ka
-
-{: .note}
-Note that this is all lowercase.
+Substring fragmentation is currently no longer supported as a fragmentation option in the LDES server.
 
 
-<br>
-
-<br>
 
 ---
 

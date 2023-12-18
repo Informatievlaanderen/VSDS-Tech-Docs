@@ -136,7 +136,7 @@ You can find more information in [this article](https://medium.com/geekculture/e
 
 <p align="center"><img src="/VSDS-Tech-Docs/images/qgis.png"  width="80%" text-align="center"></p>
 
-1. Follow the steps from [LDES to PostgreSQL/TimescaleDB](https://informatievlaanderen.github.iodocs/LDES2Service.html#data-science-ldes-to-postgresqltimescaledb)
+1. Follow the steps from [LDES to PostgreSQL/TimescaleDB](https://informatievlaanderen.github.io/VSDS-Tech-Docs/quickstart/LDES2services#postgresql--timescaledb)
 
 2. Connecting QGIS to a PostgreSQL/PostGIS database lets you access and visualise your geo data in real-time.
 
