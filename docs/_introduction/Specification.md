@@ -181,6 +181,7 @@ The archiving process serves two main purposes. Firstly, it ensures the long-ter
 
 ![Alt text](image-1.png)
 
+
 ## SHACL
 
 [SHACL (Shapes Constraint Language)](https://www.w3.org/TR/shacl/) is a standard for validating RDF data and ensuring that it conforms to a particular structure or shape. In the context of the Linked Data Event Stream (LDES), SHACL shapes are used to provide a machine-readble description of the expected structure of members in the stream.

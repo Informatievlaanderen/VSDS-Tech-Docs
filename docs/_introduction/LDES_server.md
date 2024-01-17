@@ -367,6 +367,31 @@ server:version-based-retention tree:viewDescription [
 ] .
 ```
 
+### Combine retention policies
+
+#### Time based and Point-in-time retention
+
+The integration of Time-based and Point-in-Time retention strategies offers a tactical method for organizations aiming to restrict data volume from a certain Point in Time within a specified time frame.
+
+
+<p align="left"><img src="image-2.png" width="50%" text-align="center"></p>
+<p align="center"><img src="image-3.png" width="50%" text-align="center"></p>
+<p align="right"><img src="image-4.png" width="50%" text-align="center"></p>
+
+
+
+#### Time-based and Version-based retention
+
+This can be used, when the focus is on datasets that are primarily relevant in their 'latest state'. A practical example is a dataset like a view of an address registry, where only the latest, updated addresses are pertinent. Such datasets require a dynamic approach to data retention.
+
+Version-based retention: to retain only the most recent version of a data item.
+Time-based retention: to maintain changes within a specific time frame.
+
+Data users can retrieve and maintain the full state of the data, regardless of when they access the data stream, all clients have the same information, leading to uniformity and consistency in data analysis.
+On the other hand, for data publishers; there's no need to store all historical data. Only the most recent state plus a short history (e.g., two days) is retained. This approach results in datasets that do not grow exponentially, simplifying management and accessibility.
+
+The combination of Version-based and Time-based Retention offers an advanced solution for managing dynamic datasets. This approach is particularly suited for scenarios where only the latest data is relevant, while still retaining a limited historical context. It achieves an optimal balance between accessibility, consistency, and efficiency in both data storage and usage.
+
 ### Hosting the LDES stream SHACL shape
 
 SHACL (Shapes Constraint Language) is a language used to validate RDF graphs against a set of conditions provided as shapes and other constructs in an RDF graph. The LDES Server facilitates hosting a SHACL shape describing the members in the LDES. Through configuration, it is possible to [reference an existing SHACL shape](https://github.com/Informatievlaanderen/VSDS-LDESServer4J#example-http-ingest-fetch-configuration) via an URL or to provide a [static file](https://github.com/Informatievlaanderen/VSDS-LDESServer4J#example-serving-static-content) with an RDF description of the SHACL shape.
