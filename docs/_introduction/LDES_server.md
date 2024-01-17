@@ -8,7 +8,7 @@ sort: 4
 
 The Linked Data Event Stream (LDES) [server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) is a configurable component that can be used to ingest, store, and (re-)publish one or multiple Linked Data Event Stream(s). The open-source LDES server is built in the context of the [VSDS project](https://www.vlaanderen.be/vlaamse-smart-data-space-portaal) to exchange (Open) Data easily.
 
-<p align="center"><img src="/VSDS-Tech-Docs/images/LDES%20server.png" width="60%" text-align="center"></p>
+<p align="center"><img src="/images/LDES%20server.png" width="60%" text-align="center"></p>
 
 The server can be configured to meet the organisation's specific needs. Functionalities include **retention policy**, **fragmentation**, **deletion**, **create a snapshot** and **pagination** for managing and processing large amounts of data more efficiently and ensuring the efficient use of storage.
 
@@ -16,7 +16,6 @@ The server can be configured to meet the organisation's specific needs. Function
 
 {: .note}
 The LDES server is available as on open-source building block on [GitHub](https://github.com/Informatievlaanderen/VSDS-LDESServer4J)
-
 
 ## Setting up the LDES Server during startup process
 
@@ -74,7 +73,6 @@ The LDES specification prescribes that each LDES must link to a SHACL shape, pro
 {: .note}
 SHACL stands for Shapes Constraint Language and is used to define a set of constraints which are used to verify to conformity of RDF data with these constraints.
 
-
 The SHACL shape specifies the expected properties of an LDES members and the constraints that must be followed to ensure the LDES member adheres to the expected structure and semantics. It defines properties such as required properties, allowed property values, and the data types expected for the properties.
 
 For more information about the SHACL shape and its structure, go to [here](https://informatievlaanderen.github.io/VSDS-Tech-Docs/introduction/Specification#shacl). More information on how to provide an RDF file, containing a SHACL shape, to the LDES server can be found [here](https://github.com/Informatievlaanderen/VSDS-LDESServer4J#example-serving-static-content).
@@ -83,7 +81,7 @@ For more information about the SHACL shape and its structure, go to [here](https
 
 To reduce the volume of data that consumers need to replicate or to speed up certain queries, the LDES server can be configured to create several fragmentations. Fragmentations are similar to indexes in databases but then published on the Web. The RDF predicate on which the fragmentation must be applied is defined through configuration.
 
-<p align="center"><img src="/VSDS-Tech-Docs/images/fragmentation.png" width="60%" text-align="center"></p>
+<p align="center"><img src="/images/fragmentation.png" width="60%" text-align="center"></p>
 
 The fragmenting of a Linked Data Event Stream (LDES) is a crucial technique for managing and processing large amounts of data more efficiently. There are three main methods of fragmentation: **geospatial**, **time-based**, and **substring** fragmentation.
 
@@ -103,7 +101,7 @@ The expected parameter to apply a partioning is a `member limit`, indicating the
 name: “pagination”
 config:
   memberLimit: { Mandatory: member limit > 0 }
-````
+```
 
 **Algorithm**
 
@@ -137,15 +135,13 @@ config:
 
 Substring fragmentation is currently no longer supported as a fragmentation option in the LDES server.
 
-
-
 ---
 
 #### Time-based fragmentation
 
 [Time-based fragmentation](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-timebased-hierarchical) has not yet been implemented.
 
-<p align="center"><img src="/VSDS-Tech-Docs/images/temporal.png" width="60%" text-align="center"></p>
+<p align="center"><img src="/images/temporal.png" width="60%" text-align="center"></p>
 
 Example of a time-based fragmentation configuration file
 
@@ -176,7 +172,7 @@ next fragment is created with a new current timestamp.
 
 Consider the scenario where the address registry is published as an LDES that using partitioning. In such a case, data consumers are required to replicate the entire linear set of fragments, despite only being interested in a smaller subset of the dataset. For instance, the city of Brussels may only require addresses within its geographical region and is not interested in other addresses. However, with the partitioned LDES, they would need to iterate through all the fragments and filter the LDES members (address version objects) on the client-side. By utilising geospatial fragmentation, the data can be divided into smaller pieces (tiles) based on geographical location. This facilitates filtering on the fragment level (tiles) and allows for processing and analysis of data within specific geospatial tiles.
 
-<p align="center"><img src="/VSDS-Tech-Docs/images/geospatial.png" width="60%" text-align="center"></p>
+<p align="center"><img src="/images/geospatial.png" width="60%" text-align="center"></p>
 
 The geospatial fragmentation supported by the LDES server is based on the ["Slippy Maps" algorithm](https://wiki.openstreetmap.org/wiki/Slippy_map). The fragmentation expects a `zoom level` parameter which is used by the algorithm to divide the "world" into tiles. The number of tiles if 2^2n^ (where n = zoom level). The second expected parameter is an `RDF predicate`, indicating on which property of the LDES member the fragmentation should be applied. More information about the algorithm used to apply a geospatial fragmentation can be found [here](https://github.com/Informatievlaanderen/VSDS-LDESServer4J/tree/main/ldes-fragmentisers/ldes-fragmentisers-geospatial).
 
@@ -307,9 +303,11 @@ The LDES server typically adds an LDES member to the "lowest" possible fragment,
 
 A [retention policy](https://github.com/Informatievlaanderen/VSDS-LDESServer4J#example-retention) determines how long data will be kept and stored. Its purpose is to ensure the efficient use of storage resources by controlling data growth over time. Setting a retention policy per view to minimise storage fill-up is possible.
 
-<p align="center"><img src="/VSDS-Tech-Docs/images/retention_policy.png" width="60%" text-align="center"></p>
+<p align="center"><img src="/images/retention_policy.png" width="60%" text-align="center"></p>
 
 Implementing a retention policy helps organisations maintain control over their data growth and ensure that storage resources are used optimally. The policy specifies the maximum duration that data should be kept.
+
+![Alt text](image.png)
 
 #### Time based retention policy
 
@@ -501,7 +499,6 @@ Finally, to delete the catalog, a DELETE request can be performed at `/admin/api
 {: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
 
-
 ### Setting up a collection
 
 Setting up a collection on the LDES Server can be done by posting a RDF object defining a collection to `/admin/api/v1/eventstreams`
@@ -525,13 +522,12 @@ server:exampleCollection a ldes:EventStream ;
         sh:closed "true";
         a sh:NodeShape ;
     ] .
-````
+```
 
 This collection can be deleted by performing a DELETE request on `/admin/api/v1/eventstreams/{collectionName}`
 
 {: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
-
 
 #### Setting up metadata for collection
 
@@ -573,7 +569,6 @@ Similarly, a DELETE request can be performed on `/admin/api/v1/eventstreams/{col
 {: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
 
-
 ### Setting up a view
 
 Setting up a view on the LDES Server can be done by performing a POST operation with a RDF object defining a collection to `/admin/api/v1/eventstreams/{collectionName}/views`
@@ -596,11 +591,10 @@ viewName:description
 server:view1
         <https://w3id.org/tree#viewDescription>
                 <http://localhost:8080/name1/view1/description> .
-````
+```
 
 {: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
-
 
 #### Setting up metadata for view
 
@@ -649,7 +643,6 @@ Similarly, a DELETE request can be performed on `/admin/api/v1/eventstreams/{col
 {: .note}
 Further documentation can be found on the internal Swagger API available at `/v1/swagger`
 
-
 ### Setting up ACM/IDM
 
 The Access and User Management (ACM) and Identity Management (IDM) of the Flemish government are products that allow you to manage the access and identity of data users that consume the published LDES.
@@ -669,4 +662,7 @@ Via the OpenAPI Specification it becomes possible discover how the LDES server A
 As an example, the Swagger API docs can be find [here](https://onboarding1.smartdataspace.beta-vlaanderen.be/v1/swagger-ui/index.html). The Swagger API should look like this:
 
 {% include swagger2.html %}
+
+```
+
 ```

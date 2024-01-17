@@ -46,7 +46,6 @@ As defined above, an LDES is a collection of members or _immutable objects_. The
 {: .note}
 The base URI for LDES is https://w3id.org/ldes#, with the preferred prefix being `ldes`.
 
-
 ```turtle
 @prefix ldes: <http://w3id.org/ldes#> .
 @prefix tree: <https://w3id.org/tree#> .
@@ -65,7 +64,6 @@ The base URI for LDES is https://w3id.org/ldes#, with the preferred prefix being
 
 {: .note}
 The observation entity (`<observation1>`) is considered to be immutable, and its existing identifiers can be utilized as such.
-
 
 The specification indicates that an `ldes:EventStream` **should** have the following properties:
 
@@ -98,7 +96,7 @@ As stated above, an LDES can also publish a slow moving dataset, such as street 
 <streetname1-v2> rdfs:label "Station Square" ;
                dcterms:isVersionOf <streetname1> ;
                dcterms:created "2021-01-01T00:10:00Z"^^xsd:dateTime .
-````
+```
 
 This example introduces the concept of **versions**, because certain entities, such as street names, do not understand the concept of time. In this example, versions of street names are published, ensuring the immutability of the LDES members. When publishing versions of entities, extra information (`dcterms:isVersionOf`) must be added in order to be able to link these version to an entity. Not introducing versions for entities that do not understand the concept of time would lead to an incorrect implementation of the LDES spec, as shown below.
 
@@ -126,8 +124,7 @@ In this example, the entity with HTTP URI `<streetname1>` is not longer immutabl
 {: .note}
 It is important to note that once a client processes a member of an LDES, it should never have to process it again. Therefore, a Linked Data Event Stream client can maintain a list of already processed member IRIs in a cache. A reference implementation of a client is available as an open-source [SDK](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions/tree/main/ldi-core#1-ldes-client) as part of the Flanders Smart Data Space initiative.
 
-
-<p align="center"><img src="/VSDS-Tech-Docs/images/versioning.png" width="60%" text-align="center"></p>
+<p align="center"><img src="/images/versioning.png" width="60%" text-align="center"></p>
 
 ## Features of the LDES spec
 
@@ -165,7 +162,6 @@ Each relation to another fragment is semantically described, helping clients to 
 {: .note}
 The LDES server building block implements various fragmentations. More information can be found [here](https://informatievlaanderen.github.io/VSDS-LDESServer4J/configuration/fragmentations/index#ldes-fragmentations).
 
-
 ### Retention policy
 
 A retention policy is a set of rules determining how long data should be kept or deleted. A retention policy can be applied to an LDES to manage the storage and availability of data objects over time.
@@ -175,6 +171,15 @@ Currently, the LDES spec defines two retention policies, a time-based an a versi
 {: .note}
 The LDES Server buildling block implements a time-based retention policy. More information can be found [here](https://informatievlaanderen.github.io/VSDS-Tech-Docs/introduction/Specification#retention-policy).
 
+### Archiving
+
+Archiving involves the process of transferring members to a designated storage location (that is typically offline). This means that once the data is archived, it becomes inaccessible to the usual consumers or users of the LDES.
+
+The key aspect of this archiving process is that the stored data is exclusively accessible to data publishers. This implies that if there is a need to retrieve data from the archive, it is the responsibility of the publisher to access the archived data. Subsequently, the publisher can then provide this data as a new LDES for use.
+
+The archiving process serves two main purposes. Firstly, it ensures the long-term preservation of data, which is crucial for maintaining historical records or complying with data retention policies. Secondly, it aids in managing the space efficiently on the primary storage used by the LDES server. By moving data to a less operationally active storage solution, it helps in optimizing the performance and capacity of the primary storage system.
+
+![Alt text](image-1.png)
 
 ## SHACL
 
@@ -185,11 +190,9 @@ By incorporating SHACL shapes, LDES provides a powerful tool for ensuring data q
 {: .note}
 As a consequence of the immutability of the members, this shape _may_ evolve, but it **must** always be backwards compatible to the earlier version. When the new shape is not backwards compatible, a new LDES must be created.
 
-
 ## DCAT
 
 [DCAT](https://www.w3.org/TR/vocab-dcat-3/) is an RDF vocabulary for data catalogues on the Web, enabling easy interoperability and discoverability of metadata for datasets, data services, and portals. It standardises properties for describing datasets, access information, and data services. By using DCAT, publishers can increase their datasets' exposure and facilitate data sharing and reuse.
 
 {: .note}
 The LDES Server building block allows to pass a static RDF file on startup, containing DCAT to describe the LDES(es). The server reads and publishes the content.
-

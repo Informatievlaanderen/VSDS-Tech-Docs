@@ -6,6 +6,9 @@ url: https://just-the-docs.github.io
 
 favicon_ico: "/assets/images/favicon.ico"
 
+kramdown:
+  parse_block_html: true
+
 callouts:
   note:
     title: Note
@@ -13,6 +16,18 @@ callouts:
   highlight:
     title: Tip
     color: green
+
+# Define Jekyll collections
+collections:
+  introduction:
+    permalink: "/:collection/:path"
+    output: true
+  quickstart:
+    permalink: "/:collection/:path"
+    output: true
+  release:
+    permalink: "/:collection/:path"
+    output: true
 
 
 # External navigation links
@@ -29,22 +44,6 @@ nav_external_links:
     opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
 
 
-# Google Analytics Tracking (optional)
-# Supports a CSV of tracking ID strings (eg. "UA-1234567-89,G-1AB234CDE5")
-ga_tracking: G-9F4LJXRX6T
-ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
-
-# Define Jekyll collections
-collections:
-  introduction:
-    permalink: "/:collection/:path"
-    output: true
-  quickstart:
-    permalink: "/:collection/:path"
-    output: true
-  release:
-    permalink: "/:collection/:path"
-    output: true
 
 
 # Enable or disable the site search
@@ -76,7 +75,6 @@ search:
 
 just_the_docs:
   collections:
-
     introduction:
       name: Introduction to LDES
     quickstart:
@@ -85,12 +83,10 @@ just_the_docs:
       name: Release Management
 
 
+
 enable_copy_code_button: true
 
-
-
-
-footer_content: "Technical Documentation of the building blocks developed in the frame of the <a href=\"https://www.vlaanderen.be/vlaamse-smart-data-space-portaal\">Flanders Smart Data Space</a>."
+footer_content: " "
 
 
 # Footer "Edit this page on GitHub" link text

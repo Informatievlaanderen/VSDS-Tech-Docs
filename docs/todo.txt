@@ -1,5 +1,0 @@
-Use_case_LDES_server.md
---> https://github.com/Informatievlaanderen/VSDS-Onboarding-VMM/tree/main/iow-nifi
-not publicly available
-
-
