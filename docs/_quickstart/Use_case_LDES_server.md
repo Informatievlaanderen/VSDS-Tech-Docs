@@ -45,7 +45,7 @@ Please follow [README.md](https://github.com/Informatievlaanderen/VSDS-LDES-E2E-
 
 The FIWARE-Orion Context Broker (OCB) can be integrated as a data provider with the VSDS LDES (Linked Data Event Streams) Server. The OCB is an open-source software component developed by FIWARE that can manage real-time context information by receiving updates from IoT devices, sensors, and other sources and storing this information in a centralized location.
 
-One example of this integration is demonstrated in the diagram below, which illustrates the use case of onboarding the Internet of Water (VMM) data. The details of this use case locate at [Orien Context Broker - IOW.](https://github.com/Informatievlaanderen/VSDS-Onboarding-VMM/tree/main/iow-nifi)
+One example of this integration is demonstrated in the diagram below, which illustrates the use case of onboarding the Internet of Water (VMM) data. 
 
 <p align="center"><img src="/VSDS-Tech-Docs/images/orion_onboarding_iow.png"  width="70%" text-align="center"></p>
 
