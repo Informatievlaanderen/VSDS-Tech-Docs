@@ -18,7 +18,7 @@ Are you familiar with these basic concepts of LDES? If so, it's time to start pu
 
 ### Learn by doing
 
-Based on a few use cases, we try to teach you in a light-hearted way how to publish or concumer an LDES. In these tech docs we do not go into depth about the different possible parameters, but we show a working configuration for the proposed use case. Detailed information about the technical parameters or configuration options can be found under sections of the building blocks individually.
+Based on a few use cases, we try to teach you in a light-hearted way how to publish or consume an LDES. In these tech docs we do not go into depth about the different possible parameters, but we show a working configuration for the proposed use case. Detailed information about the technical parameters or configuration options can be found under sections of the building blocks individually.
 
 <div style="display: flex; justify-content: space-around;">
 
