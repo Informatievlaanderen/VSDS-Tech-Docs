@@ -30,18 +30,7 @@ collections:
     output: true
 
 
-# External navigation links
-nav_external_links:
-  - title: Linked Data Interactions
-    parent: core
-    url: https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions
-    hide_icon: false # set to true to hide the external link icon - defaults to false
-    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
-  - title: LDES Server
-    parent: core
-    url: https://informatievlaanderen.github.io/VSDS-LDESServer4J
-    hide_icon: false # set to true to hide the external link icon - defaults to false
-    opens_in_new_tab: false # set to true to open this link in a new tab - defaults to false
+
 
 
 
@@ -76,7 +65,7 @@ search:
 just_the_docs:
   collections:
     introduction:
-      name: Introduction to LDES
+      name: Basic concepts
     quickstart:
       name: Quickstart
     release:
@@ -88,6 +77,7 @@ enable_copy_code_button: true
 
 footer_content: " "
 
+header_pages: [test.html]
 
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link

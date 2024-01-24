@@ -1,10 +1,10 @@
 ---
-title: LDES Client
+title: Replication and synchronisation
 layout: home
 sort: 3
 ---
 
-# LDES Client
+# Replication and synchronisation
 
 <p align="center"><img src="/VSDS-Tech-Docs/images/LDES%20client.png" width="60%" text-align="center"></p>
 
