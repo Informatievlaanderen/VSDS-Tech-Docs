@@ -118,195 +118,216 @@
     
     "relUrl": "/introduction/Specification#dcat"
   },"17": {
+    "doc": "Basic concept Linked Data",
+    "title": "Basic concepts of linked data",
+    "content": "In 2009, the pioneer of the worldwide web, Tim Berners-Lee, presented a TED talk about linked data as the next phase of the internet, sometimes referred to as the Semantic Web. It is a vision of the evolution of the web of documents into the semantic web, where meaning is added through linked data so that, in addition to the current -human- users of the web, machines and computers can understand and interpret the meaning of data. The Semantic Web allows more advanced and sophisticated search capabilities and machines to understand and process data like humans do. Linked open data is a community project overseen by the W3C organisation and aims to enrich the Web by making open datasets even more accessible through the linked data method. “Linked Open Data is Linked Data which is released under an open license, which does not impede its reuse for free.” Tim Berners-Lee . Tim Berners-Lee has proposed a 5-star system for rating the quality of open data on the Web, with Linked Open Data receiving the highest ranking: . ⭐: data is openly available in some format (e.g. pdf); ⭐⭐: data is available in a structured format(e.g.xls); ⭐⭐⭐: data is available in a non-proprietary structured format (.csv); ⭐⭐⭐⭐: data follows W3C standards, like using RDF and URIs; ⭐⭐⭐⭐⭐: all of the other, plus links to other Linked Open Data sources to provide a context. Linked data is structured data linked to other data by relationships or connections to make it more valuable through semantic searches. It expands on established Web technologies like HTTP and URIs. Still, it uses them to communicate information in a way that computers can read automatically rather than only serving web pages for human readers. The idea behind linked data is to turn the Internet into a global decentralized machine-readable database. Linked data event stream, Linked data event stream, Linked data event stream, Linked data event stream, Linked data event stream, Linked data event stream, Linked data event stream Visualization of an RDF (RDF 1.1 Primer (w3.org)) The figure above visualizes Resource Description Framework (RDF). RDF is a standard data model for representing and sharing information on the Web, based on the idea of using triples to represent data. A triple consists of three parts: a subject, a predicate, and an object. In the context of linked data, subjects and objects refer to individual pieces of data, such as people, places, or things. Predicates refer to the connections or associations between different nodes, such as the fact that a person is the painter of a painting. In the figure above, the subject http://example.com/person/alice represents Alice, the predicate http://example.com/vocab/isAFriendOf represents the relationship “is a friend of,” and the object http://example.com/person/bob represents Bob. ",
+    "url": "/introduction/linked_data#basic-concepts-of-linked-data",
+    
+    "relUrl": "/introduction/linked_data#basic-concepts-of-linked-data"
+  },"18": {
+    "doc": "Basic concept Linked Data",
+    "title": "Different types of serialization",
+    "content": "Linked Data serialization formats are designed to encode structured data for interchange on the web, enabling the sharing and connecting of data across different sources. Besides Turtle, XML RDF, and N-Quads, several other serialization formats are commonly used in the context of Linked Data and RDF. In the frame of the Flanders Smart Data Spacen, for the moment, only the most commonly used serializations can be chosen in the configuration options of the building blocks. Each format offers unique features and is suitable for different use cases: . JSON-ld . Configuration option building block: application/ld+json . JSON-LD is a lightweight Linked Data format. It is easy for humans to read and write. It is based on the already successful JSON format and provides a way to help JSON data interoperate at Web-scale. JSON-LD is an ideal data format for programming environments, REST Web services, and unstructured databases such as Apache CouchDB and MongoDB. { \"@context\": \"https://json-ld.org/contexts/person.jsonld\", \"@id\": \"http://dbpedia.org/resource/John_Lennon\", \"name\": \"John Lennon\", \"born\": \"1940-10-09\", \"spouse\": \"http://dbpedia.org/resource/Cynthia_Lennon\" } . TURTLE (ttl) . Configuration option building block: text/turtle . Turtle (Terse RDF Triple Language) is a serialization format for expressing data in the Resource Description Framework (RDF) that is designed to be compact and readable by humans. RDF is a standard model for data interchange on the web, which allows data to be linked to other data, enabling a wide range of web-based services. Turtle represents this linked data in a way that emphasizes simplicity and ease of understanding, using a syntax that closely resembles the way triples (subject, predicate, object) are naturally described. In Turtle, each statement (or triple) consists of a subject, a predicate, and an object, followed by a period. It uses prefixes to shorten URIs (Uniform Resource Identifiers), making the data more compact and easier to read. Example: . @base &lt;http://example.org/&gt; . @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; . @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; . @prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; . @prefix rel: &lt;http://www.perceive.net/schemas/relationship/&gt; . &lt;#green-goblin&gt; rel:enemyOf &lt;#spiderman&gt; ; a foaf:Person ; # in the context of the Marvel universe foaf:name \"Green Goblin\" . &lt;#spiderman&gt; rel:enemyOf &lt;#green-goblin&gt; ; a foaf:Person ; foaf:name \"Spiderman\" . N-Quads . Configuration option building block: application/n-quads . N-Quads is a serialization format designed for RDF (Resource Description Framework) datasets that extends the simplicity and effectiveness of the Turtle format to support named graphs within RDF data. Named graphs are a way of grouping sets of triples, allowing for the representation of multiple, discrete graphs within a single document. This feature is particularly useful for working with complex datasets that involve provenance, versioning, or different viewpoints within the same dataset, facilitating more granular control and organization of RDF data. An N-Quads document consists of a series of statements, where each statement represents a triple (subject, predicate, object) similar to Turtle, with the addition of a fourth element that specifies the graph name (context) to which the triple belongs. Each statement in N-Quads is a line in the file, ending with a period, making it straightforward to parse and generate. &lt;http://one.example/subject1&gt; &lt;http://one.example/predicate1&gt; &lt;http://one.example/object1&gt; &lt;http://example.org/graph3&gt; . # comments here # or on a line by themselves _:subject1 &lt;http://an.example/predicate1&gt; \"object1\" &lt;http://example.org/graph1&gt; . _:subject2 &lt;http://an.example/predicate2&gt; \"object2\" &lt;http://example.org/graph5&gt; . ",
+    "url": "/introduction/linked_data#different-types-of-serialization",
+    
+    "relUrl": "/introduction/linked_data#different-types-of-serialization"
+  },"19": {
+    "doc": "Basic concept Linked Data",
+    "title": "Basic concept Linked Data",
+    "content": " ",
+    "url": "/introduction/linked_data",
+    
+    "relUrl": "/introduction/linked_data"
+  },"20": {
     "doc": "Consume an LDES",
     "title": "Consume an LDES",
     "content": "The purpose of the quick start try-out is solely to create _Pagination fragmentation for the self-generated data type to LDES format. To support other fragments, data types, or other features, e.g., retention, caching, etc., please consult LDES Server Manual for the configurations._ . Vlaamse Smart Data Space_ projects also provide methods for transforming data to *LDES format, e.g. from _NGSI-V2* to *NGSI-LD, from NGSI to OSLO Model, from NGSI-V2 to _LDES (LinkedDataEventStreams). Having trouble implementing this example? Please post your issue on the VSDS Tech docs repo. In this short example below, we show you how the components of the VSDS can be used to link multiple data streams across domains and systems using LDES. The whole story can be read here: Real-Time Data Linkage via Linked Data Event Streams . ",
     "url": "/quickstart/Consume_LDES",
     
     "relUrl": "/quickstart/Consume_LDES"
-  },"18": {
+  },"21": {
     "doc": "Consume an LDES",
     "title": "Before starting",
     "content": ". | Docker has been installed on your device. | Local Ports 8443 and 7200 are accessible. | . ",
     "url": "/quickstart/Consume_LDES#before-starting",
     
     "relUrl": "/quickstart/Consume_LDES#before-starting"
-  },"19": {
+  },"22": {
     "doc": "Consume an LDES",
     "title": "Start your LDES workbench",
     "content": ". | Create a local docker-compose.yml file with the following content, or you could use the current good-to-go GetStarted GRAR project: | . version: ‘3’ volumes: nifi-database-repository: nifi-flowfile-repository: nifi-content-repository: nifi-provenance-repository: nifi-state: nifi-logs: nifi-nars: nifi-conf: networks: front-tier: driver: bridge back-tier: driver: bridge services: nifi: image: ghcr.io/informatievlaanderen/ldes-workbench-nifi:20230214T123440 #20221109T103745 container_name: nifi-graph restart: unless-stopped ports: # HTTPS - 8443:8443/tcp volumes: - ./nifi-extensions:/opt/nifi/nifi-current/extensions environment: - NIFI_UI_PORT=8443 - SINGLE_USER_CREDENTIALS_USERNAME=admin - SINGLE_USER_CREDENTIALS_PASSWORD=admin123456789 - NIFI_WORKFLOW_LISTEN_PORT=9005 - NIFI_JVM_HEAP_INIT=8g - NIFI_JVM_HEAP_MAX=8g graphdb: image: ontotext/graphdb:10.0.2 container_name: graphdb3 ports: # HTTP - 7200:7200 . To begin, the command for launching GraphDb and Apache NiFi within a docker container is as follows: . docker compose up --build . Apache Nifi runs on port 8443:8443/tcp :https://localhost:8443 GraphDB runs on port 7200 :7200/tcp : http://localhost:7200 . A data flow can be built up by dragging in building blocks in the graphical user interface of Apache NiFi. This docker container contains all the components out the latest version of the LDES workbench (e.g., latest LDES Client, LDES server, etc.). Every data stream can be transformed into a Linked Data Event Stream with a conversion data flow. ",
     "url": "/quickstart/Consume_LDES#start-your-ldes-workbench",
     
     "relUrl": "/quickstart/Consume_LDES#start-your-ldes-workbench"
-  },"20": {
+  },"23": {
     "doc": "Consume an LDES",
     "title": "Starting from a published LDES",
     "content": "In this example, we start from published LDES . @prefix conceptscheme: &lt;https://data.vlaanderen.be/id/conceptscheme/&gt; . @prefix generiek: &lt;https://data.vlaanderen.be/ns/generiek#&gt; . @prefix geosparql: &lt;http://www.opengis.net/ont/geosparql#&gt; . @prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix locn: &lt;https://www.w3.org/ns/locn#&gt; . @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; . @prefix relation: &lt;http://www.iana.org/assignments/relation/&gt; . @prefix terms: &lt;http://purl.org/dc/terms/&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt; . https://data.vlaanderen.be/id/adres/1658513 relation:self \"https://api.basisregisters.staging-vlaanderen.be/v2/adressen/1658513\" . [ https://data.vlaanderen.be/ns/gebouw#bestaatUit &lt;https://data.vlaanderen.be/id/gebouweenheid/17631816/2022-06-27T16:23:49+02:00&gt; ; generiek:lokaleIdentificator \"17631524\"] . [ https://data.vlaanderen.be/ns/gebouw#bestaatUit &lt;https://data.vlaanderen.be/id/gebouweenheid/6311633/2022-06-27T16:23:48+02:00&gt; ; generiek:lokaleIdentificator \"6310652\"] . https://data.vlaanderen.be/id/gebouweenheid/14539518/2022-06-27T16:23:32+02:00 rdf:type &lt;https://data.vlaanderen.be/ns/gebouw#Gebouweenheid&gt; ; terms:isVersionOf &lt;https://data.vlaanderen.be/id/gebouweenheid/14539518&gt; ; prov:generatedAtTime \"2022-06-27T16:23:32+02:00\"^^&lt;http://www.w3.org/2001/XMLSchema#dateTime&gt; ; &lt;https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.adres&gt; &lt;https://data.vlaanderen.be/id/adres/5162364&gt; ; &lt;https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.geometrie&gt; [ conceptscheme:geometriemethode conceptscheme:aangeduidDoorBeheerder ; locn:geometry [ geosparql:asGML \"&lt;gml:Point srsName=\\\"http://www.opengis.net/def/crs/EPSG/0/31370\\\" xmlns:gml=\\\"http://www.opengis.net/gml/3.2\\\"&gt;&lt;gml:pos&gt;200647.71 210393.46&lt;/gml:pos&gt;&lt;/gml:Point&gt;\"^^geosparql:gmlLiteral ] ] ; &lt;https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.status&gt; conceptscheme:gerealiseerd ; &lt;https://data.vlaanderen.be/ns/gebouw#functie&gt; conceptscheme:nietGekend ; generiek:lokaleIdentificator \"14539518\" ; generiek:naamruimte \"https://data.vlaanderen.be/id/gebouweenheid\" ; generiek:versieIdentificator \"2022-06-27T16:23:32+02:00\" . &lt;https://data.vlaanderen.be/id/adres/2213034&gt; relation:self \"https://api.basisregisters.staging-vlaanderen.be/v2/adressen/2213034\" . ",
     "url": "/quickstart/Consume_LDES#starting-from-a-published-ldes",
     
     "relUrl": "/quickstart/Consume_LDES#starting-from-a-published-ldes"
-  },"21": {
+  },"24": {
     "doc": "Consume an LDES",
     "title": "Consuming an LDES",
     "content": "For this purpose, the three Linked Data Event streams are stored in a GraphDB to facilitate efficient and effective data consumption. GraphDB supports complex semantic queries and inference, making discovering meaningful relationships between different data sources possible. | Start Apache NiFi on localhost:8433 . | Import data flow by importing Apache NiFi configuration file. See this site for more info . | Add LDES endpoint in the LDES client . | Start Apache NiFi data flow . | . | Open GraphDB on localhost:7200/sparql . | Run a semantic query with SPARQL . | . Below you find an example of a SPARQL query. This query returns triples with information about the parcel LDES. PREFIX adres: &lt;https://data.vlaanderen.be/id/adres/&gt; PREFIX gebouw: &lt;https://data.vlaanderen.be/id/?gebouweenheid/&gt; PREFIX gebouweenheid: &lt;https://data.vlaanderen.be/ns/gebouw#&gt; PREFIX prov: &lt;http://www.w3.org/ns/prov#&gt; PREFIX generiek: &lt;https://data.vlaanderen.be/ns/generiek#&gt; PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; construct { ?gebouweenheid prov:generatedAtTime ?generatedAtTime . ?gebouweenheid rdf:type ?type .?gebouweenheid gebouweenheid:Gebouweenheid.geometrie ?geometrie . ?gebouweenheid gebouweenheid:Gebouweenheid.status ?status . ?gebouweenheid gebouweenheid:functie ?functie . ?gebouweenheid generiek:lokaleIdentificator ?lokaleIdentificator . ?gebouweenheid generiek:naamruimte ?naamruimte . ?gebouweenheid generiek:versieIdentificator ?versieIdentificator . } where { ?gebouweenheid &lt;https://data.vlaanderen.be/ns/gebouw#Gebouweenheid.adres&gt; &lt;https://data.vlaanderen.be/id/adres/1864311&gt; . OPTIONAL{ ?gebouweenheid prov:generatedAtTime ?generatedAtTime . ?gebouweenheid rdf:type ?type . ?gebouweenheid gebouweenheid:Gebouweenheid.geometrie ?geometrie . ?gebouweenheid gebouweenheid:Gebouweenheid.status ?status . ?gebouweenheid gebouweenheid:functie ?functie . ?gebouweenheid generiek:lokaleIdentificator ?lokaleIdentificator . ?gebouweenheid generiek:naamruimte ?naamruimte . ?gebouweenheid generiek:versieIdentificator ?versieIdentificator . }} . This SPARQL query returns multiple triples with information about building units. These triples can then be converted into an RDF file. The RDF file should be as follow: . @prefix ns1: &lt;https://data.vlaanderen.be/ns/generiek#&gt; . @prefix ns2: &lt;https://data.vlaanderen.be/ns/gebouw#&gt; . @prefix ns3: &lt;http://www.w3.org/ns/prov#&gt; . @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . &lt;https://data.vlaanderen.be/id/gebouweenheid/14635685&gt; a ns2:Gebouweenheid ; ns3:generatedAtTime \"2022-06-27T20:51:02+02:00\"^^xsd:dateTime ; ns2:Gebouweenheid.geometrie [ ] ; ns2:Gebouweenheid.status &lt;https://data.vlaanderen.be/id/conceptscheme/gerealiseerd&gt; ; ns2:functie &lt;https://data.vlaanderen.be/id/conceptscheme/nietGekend&gt; ; ns1:lokaleIdentificator \"14635685\" ; ns1:naamruimte \"https://data.vlaanderen.be/id/gebouweenheid\" ; ns1:versieIdentificator \"2022-06-27T20:51:02+02:00\" . ",
     "url": "/quickstart/Consume_LDES#consuming-an-ldes",
     
     "relUrl": "/quickstart/Consume_LDES#consuming-an-ldes"
-  },"22": {
+  },"25": {
     "doc": "LDES2Service",
     "title": "Triple stores",
     "content": ". The LDES2Service toolbox contains an “RDF4J Put” processor, allowing to ingest members in triple stores that support the RDF4J API. In this Github repo, a docker-compose file with the configuration of GraphDB and Apache NiFi. A data flow is configured in Apache NiFi to replicate LDES members into GraphDB. There is already a preconfigured Apache Nifi workflow file available. Execute the following steps to start replicating data into GraphDB. | Start Docker . | Make sure port 8433 (Apache Nifi) and 7200 (GraphDB) are accessible . | Create a local docker-compose.yml file with the following good-to-go configuration | Run docker-compose up --build to start the Apache Nifi and GraphDB containers . | Configure an LDES endpoint in the LDES Client in Apache Nifi . | Go to your GraphDB database via http://localhost:7200/ . | Create a repo in GraphDB . | Start the Apache NiFi workflow . | LDES members will be replicated one by one into your GraphDB | . You can find more information in this article . ",
     "url": "/quickstart/LDES2services#triple-stores",
     
     "relUrl": "/quickstart/LDES2services#triple-stores"
-  },"23": {
+  },"26": {
     "doc": "LDES2Service",
     "title": "PostgreSQL &amp; TimescaleDB",
     "content": ". In this Github repo, you will find a docker file with the configuration of TimescaleDB and Apache NiFi. A workflow is configured in Apache NiFi to replicate LDES members into TimescaleDB. You will find an Apache NiFi configuration file containing the necessary data flow. This Apache NiFi data flow works also for storing LDES members in a PostgreSQL database. | Start Docker . | Make sure port 8433, 8001 and 8002 are accessible . | Create a local docker-compose.yml file with the following good-to-go configuration . | Run docker-compose up --build . | import the workflow in Apache NiFi (localhost:8443) via this configuration file . | Configure an LDES endpoint in the LDES Client . | Go to your PgAdmin to access the TimescaleDB database via localhost:8002/ . | Create a database in TimescaleDB . | Start the Apache NiFi workflow . | LDES members will be replicated one by one into your TimescaleDB . | . You can find more information in this article . ",
     "url": "/quickstart/LDES2services#postgresql--timescaledb",
     
     "relUrl": "/quickstart/LDES2services#postgresql--timescaledb"
-  },"24": {
+  },"27": {
     "doc": "LDES2Service",
     "title": "PowerBI",
     "content": ". In this Github repo, you will find a docker file with the configuration of PostgreSQL, Apache NiFi and a configuration file for PowerBI. A workflow is configured in Apache NiFi to replicate the LDES members into PostgreSQL. You will find an Apache NiFi configuration file containing the necessary data flow. | Start Docker . | Make sure port 8433, 8001 and 8002 are accessible . | Create a local docker-compose.yml file with the following good-to-go configuration . | Run docker-compose up --build . | import the workflow in Apache NiFi (localhost:8443) via this configuration file . | Configure an LDES endpoint in the LDES Client . | Go to your PgAdmin to access your PostgreSQL database via localhost:8002/ . | Create a database in PostgreSQL . | Start the Apache NiFi workflow . | LDES members will be replicated one by one into your PostgreSQL . | Link PostgreSQL to Geoserver . | . You can find more information in this article . ",
     "url": "/quickstart/LDES2services#powerbi",
     
     "relUrl": "/quickstart/LDES2services#powerbi"
-  },"25": {
+  },"28": {
     "doc": "LDES2Service",
     "title": "GeoServer",
     "content": ". In this Github repo, you will find a docker file with the configuration of PostgreSQL, Apache NiFi and Geoserver. A data flow is configured in Apache NiFi to convert these data streams into PostgreSQL. You will find an Apache NiFi configuration file containing the necessary data flow. This Apache NiFi data flow works also for storing LDES members in a PostgreSQL database. | Install Docker . | Make sure port 8433, 8001 and 8002 are accessible . | Create a local docker-compose.yml file with the following good-to-go configuration . | Run docker-compose up --build . | import a data flow in Apache NiFi (localhost:8443) via this configuration file | Assign and LDES endpoint in the LDES client . | Go to PgAdmin to access your PostgreSQL database via localhost:8002/ . | Create a database in PostgreSQL . | Start the Apache NiFi data flow . | LDES members will be stored one by one in your PostgreSQL . | Link PostgreSQL to Geoserver | . You can find more information in this article . ",
     "url": "/quickstart/LDES2services#geoserver",
     
     "relUrl": "/quickstart/LDES2services#geoserver"
-  },"26": {
+  },"29": {
     "doc": "LDES2Service",
     "title": "LDES to QGIS",
     "content": ". | Follow the steps from LDES to PostgreSQL/TimescaleDB . | Connecting QGIS to a PostgreSQL/PostGIS database lets you access and visualise your geo data in real-time. | . You can find more information in this article . ",
     "url": "/quickstart/LDES2services#ldes-to-qgis",
     
     "relUrl": "/quickstart/LDES2services#ldes-to-qgis"
-  },"27": {
+  },"30": {
     "doc": "LDES2Service",
     "title": "Machine Learning (ML-LDES server)",
     "content": "This is a prototype!! . In this Github repo, you will find a docker file with the configuration of PostgreSQL and Apache NiFi. A data flow is configured in Apache NiFi to convert these data streams into PostgreSQL. You will find an Apache NiFi configuration file containing the necessary data flow. This Apache NiFi data flow works also for storing LDES members in a PostgreSQL database. | Install Python requirements via: pip install -r requirements.txt . | Install Docker . | Make sure port 8433, 8001 and 5432 are accessible . | Create a local docker-compose.yml file with the following good-to-go configuration . | Run docker-compose up --build . | import a data flow in Apache NiFi (localhost:8443) via this configuration file . | Assign and LDES endpoint in the LDES client . | Go to PgAdmin to access your TimescaleDB database (localhost:8002/) . | Create a database in TimescaleDB . | Start the Apache NiFi data flow . | LDES members will be stored one by one in your TimescaleDB . | . Go to github repo for more info about ML-LDES server prototype . You can find more information in this and this article . ",
     "url": "/quickstart/LDES2services#machine-learning-ml-ldes-server",
     
     "relUrl": "/quickstart/LDES2services#machine-learning-ml-ldes-server"
-  },"28": {
+  },"31": {
     "doc": "LDES2Service",
     "title": "LDES2Service",
     "content": "This sections provides an overview of how data consumer can replicate data to different backend systems. ",
     "url": "/quickstart/LDES2services",
     
     "relUrl": "/quickstart/LDES2services"
-  },"29": {
+  },"32": {
     "doc": "Publish an LDES",
     "title": "Publish an LDES",
     "content": "This example focuses on both publishing and consuming a Linked Data Event Stream (LDES). We start by explaining how to setup an LDES server and publish data as an LDES, followed by the setup of the LDES client to replicate an LDES. In this example, the data examples are described with OSLO (the Flemish Interoperability Program) ontologies. The files you will use for this quick start guide is available here . This quick start example demonstrates only a small amount of the capabilities of the LDES Server. For more information about the LDES server, please consult the LDES Server Manual. ",
     "url": "/quickstart/Publish_LDES",
     
     "relUrl": "/quickstart/Publish_LDES"
-  },"30": {
+  },"33": {
     "doc": "Publish an LDES",
     "title": "Before starting",
     "content": ". | Make sure Docker has been installed on your device. | Local Ports 8080, and 27017 are accessible. | The command script is written in bash code. Please modify it accordingly. | . ",
     "url": "/quickstart/Publish_LDES#before-starting",
     
     "relUrl": "/quickstart/Publish_LDES#before-starting"
-  },"31": {
+  },"34": {
     "doc": "Publish an LDES",
     "title": "Setup an LDES Server",
     "content": "To start a default LDES Server, a few basic steps are needed. | Create a ldes-server.yml config file with this basic content . mongock: migration-scan-package: VSDS springdoc: swagger-ui: path: /v1/swagger ldes-server: host-name: \"http://localhost:8080\" management: tracing: enabled: false spring: data: mongodb: database: ldes host: ldes-mongodb port: 27017 auto-index-creation: true . | Create a local docker-compose.yml file with the content below. version: \"3.3\" services: ldes-server: container_name: basic_ldes-server image: ldes/ldes-server:1.0.0-SNAPSHOT environment: - SPRING_CONFIG_LOCATION=/config/ volumes: - ./ldes-server.yml:/config/application.yml:ro ports: - 8080:8080 networks: - ldes depends_on: - ldes-mongodb ldes-mongodb: container_name: quick_start_ldes-mongodb image: mongo:6.0.4 ports: - 27017:27017 networks: - ldes ldio-workbench: container_name: basic_ldes-replication image: ldes/ldi-orchestrator:1.0.0-SNAPSHOT environment: - SPRING_CONFIG_NAME=application - SPRING_CONFIG_LOCATION=/config/ volumes: - ./ldio.yml:/config/application.yml:ro ports: - ${LDIO_WORKBENCH_PORT:-8081}:8080 networks: - ldes profiles: - delay-started networks: ldes: name: quick_start_network . | Run docker compose up within the work directory of .yml file, to start the containers. | The LDES Server is now available at port 8080 and accepts members via HTTP POST requests. | We will now configure the LDES Server. (note that this part can also be done with the Swagger endpoint (/v1/swagger), where more detailed documentation is available) . | Let’s set the DCAT metadata for the server by defining a title and a description: | . curl -X 'POST' \\ 'http://localhost:8080/admin/api/v1/dcat' \\ -H 'accept: text/plain' \\ -H 'Content-Type: text/turtle' \\ ---data-raw ' @prefix dct: &lt;http://purl.org/dc/terms/&gt; . @prefix dcat: &lt;http://www.w3.org/ns/dcat#&gt; . [] a dcat:Catalog ; dct:title \"My LDES'\\''es\"@en ; dct:description \"All LDES'\\''es from publiser X\"@en . ' . | Next, let’s add collection for our mobility hindrances. This will be used to replicate the dataset from GIPOD: . | A collection name “mobility-hindrances” | Will process members of type “https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder” | Will have 2 views : . | A default view, which provides a basic view using a paginated fragmention. This also enables snapshotting. (this view is called by-page by default) | A time-based fragmented view. This will fragment the members based on their timebased property. This value is by default set to http://www.w3.org/ns/prov#generatedAtTime | . | . curl -X 'PUT' 'http://localhost:8080/admin/api/v1/eventstreams' \\ -H 'accept: text/turtle' \\ -H 'Content-Type: text/turtle' \\ --data-raw '@prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; . @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . @prefix example: &lt;http://example.org/&gt; . @prefix collection: &lt;/mobility-hindrances/&gt; . &lt;/mobility-hindrances&gt; a ldes:EventStream ; ldes:timestampPath dcterms:created ; ldes:versionOfPath dcterms:isVersionOf ; example:memberType &lt;https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder&gt; ; example:hasDefaultView \"true\"^^xsd:boolean ; ldes:view collection:time-based ; tree:shape [ a sh:NodeShape ; ] . collection:time-based tree:viewDescription [ ldes:retentionPolicy [ a ldes:DurationAgoPolicy ; tree:value \"PT2M\"^^xsd:duration ; ] ; tree:fragmentationStrategy ([ a tree:Fragmentation ; tree:name \"timebased\" ; tree:memberLimit \"20\" ; ]) ; ] . ' . | Let’s add some DCAT metadata for this collection: . | We define an English and Dutch title and description | We define the creator of the collection to be http://sample.org/company/MyDataOwner | . curl -X 'POST' \\ 'http://localhost:8080/admin/api/v1/eventstreams/mobility-hindrances/dcat' \\ -H 'accept: */*' \\ -H 'Content-Type: text/turtle' \\ -d ' @prefix dcat: &lt;http://www.w3.org/ns/dcat#&gt; . @prefix dct: &lt;http://purl.org/dc/terms/&gt; . [] a dcat:Dataset ; dct:title \"Mobility Hindrances Collection\"@en ; dct:title \"Mobiliteitshindernissen collectie\"@nl ; dct:description \"A collection containing mobility hindrances\"@en ; dct:description \"Een collectie met Mobiliteitshindernissen\"@nl ; dct:creator &lt;http://sample.org/company/MyDataOwner&gt; ;' . | We’ll now also set the DCAT metadata for the time-based view by defining a title and a description : . curl -X 'POST' \\ 'http://localhost:8080/admin/api/v1/eventstreams/mobility-hindrances/views/time-based/dcat' \\ -H 'accept: */*' \\ -H 'Content-Type: text/turtle' \\ -d '@prefix dct: &lt;http://purl.org/dc/terms/&gt; . @prefix dcat: &lt;http://www.w3.org/ns/dcat#&gt; . [] a dcat:DataService ; dct:title \"My timebased view\"@en ; dct:description \"Timebased fragmentation for the mobility-hindrances \"@en . ' . | Next, let’s add a second collection to collect observations: . | A collection name “observations” | Will process members of type “https://data.vlaanderen.be/ns/mobiliteit#ObservationCollection” | Will have a default view, which provides a basic view using a paginated fragmention. This also enables snapshotting. | . curl -X 'PUT' 'http://localhost:8080/admin/api/v1/eventstreams' \\ -H 'accept: text/turtle' \\ -H 'Content-Type: text/turtle' \\ --data-raw '@prefix ldes: &lt;https://w3id.org/ldes#&gt; . @prefix example: &lt;http://example.org/&gt; . @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; . @prefix tree: &lt;https://w3id.org/tree#&gt;. @prefix sh: &lt;http://www.w3.org/ns/shacl#&gt; . @prefix server: &lt;http://localhost:8080/&gt; . @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . server:observations a ldes:EventStream ; ldes:timestampPath dcterms:created ; ldes:versionOfPath dcterms:isVersionOf ; example:memberType &lt;https://data.vlaanderen.be/ns/mobiliteit#ObservationCollection&gt; ; example:hasDefaultView \"true\"^^xsd:boolean ; tree:shape [ a sh:NodeShape ; ] . ' . | . ",
     "url": "/quickstart/Publish_LDES#setup-an-ldes-server",
     
     "relUrl": "/quickstart/Publish_LDES#setup-an-ldes-server"
-  },"32": {
+  },"35": {
     "doc": "Publish an LDES",
     "title": "Add data to the LDES Server",
     "content": ". | Create a observation.ttl file with the following content: . @prefix dc: &lt;http://purl.org/dc/terms/&gt; . @prefix prov: &lt;http://www.w3.org/ns/prov#&gt; . @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; . @prefix sosa: &lt;http://www.w3.org/ns/sosa/&gt; . @prefix ns0: &lt;http://def.isotc211.org/iso19156/2011/SamplingFeature#SF_SamplingFeatureCollection.&gt; . @prefix ns1: &lt;http://def.isotc211.org/iso19156/2011/Observation#OM_Observation.&gt; . @prefix ns2: &lt;http://def.isotc211.org/iso19103/2005/UnitsOfMeasure#Measure.&gt; . @prefix ns3: &lt;https://schema.org/&gt; . &lt;urn:ngsi-ld:WaterQualityObserved:woq:1/2023-03-12T18:31:17.003Z&gt; dc:isVersionOf &lt;urn:ngsi-ld:WaterQualityObserved:woq:1&gt; ; prov:generatedAtTime \"2023-03-12T18:31:17.003Z\"^^xsd:dateTime ; sosa:hasFeatureOfInterest \"spt-00035-79\" ; ns0:member &lt;https://data.vmm.be/id/loc-00019-33&gt;, [ sosa:madeBySensor &lt;urn:ngsi-v2:cot-imec-be:Device:imec-iow-UR5gEycRuaafxnhvjd9jnU&gt; ; ns1:result [ ns2:value [ ns3:value 2.043000e+1 ; ns3:unitCode &lt;https://data.vmm.be/id/CEL&gt; ] ] ; ns1:phenomenonTime \"2023-03-12T18:31:17.003Z\"^^xsd:datetime ; ns1:observedProperty &lt;https://data.vmm.be/concept/waterkwaliteitparameter/temperatuur&gt; ; ns1:featureOfInterest &lt;https://data.vmm.be/id/spt-00035-79&gt; ; a &lt;http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement&gt; ], [ sosa:madeBySensor &lt;urn:ngsi-v2:cot-imec-be:Device:imec-iow-UR5gEycRuaafxnhvjd9jnU&gt; ; ns1:result [ ns2:value [ ns3:value 1442 ; ns3:unitCode &lt;https://data.vmm.be/id/HP&gt; ] ] ; ns1:phenomenonTime \"2023-03-12T18:31:17.003Z\"^^xsd:datetime ; ns1:observedProperty &lt;https://data.vmm.be/concept/observatieparameter/hydrostatische-druk&gt; ; ns1:featureOfInterest &lt;https://data.vmm.be/id/spt-00035-79&gt; ; a &lt;http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement&gt; ], [ sosa:madeBySensor &lt;urn:ngsi-v2:cot-imec-be:Device:imec-iow-UR5gEycRuaafxnhvjd9jnU&gt; ; ns1:result [ ns2:value [ ns3:value 6150 ; ns3:unitCode &lt;https://data.vmm.be/id/G42&gt; ] ] ; ns1:phenomenonTime \"2023-03-12T18:31:17.003Z\"^^xsd:datetime ; ns1:observedProperty &lt;https://data.vmm.be/concept/waterkwaliteitparameter/conductiviteit&gt; ; ns1:featureOfInterest &lt;https://data.vmm.be/id/spt-00035-79&gt; ; a &lt;http://def.isotc211.org/iso19156/2011/Measurement#OM_Measurement&gt; ] ; a &lt;https://data.vlaanderen.be/ns/mobiliteit#ObservationCollection&gt; . &lt;https://data.vmm.be/id/loc-00019-33&gt; a &lt;http://def.isotc211.org/iso19156/2011/SpatialSamplingFeature#SF_SpatialSamplingFeature&gt; . | Run the following command to post the observation.ttl to the LDES Server. curl -X POST http://localhost:8080/observations -H \"Content-Type: application/ttl\" -d \"@observation.ttl\" . | . ",
     "url": "/quickstart/Publish_LDES#add-data-to-the-ldes-server",
     
     "relUrl": "/quickstart/Publish_LDES#add-data-to-the-ldes-server"
-  },"33": {
+  },"36": {
     "doc": "Publish an LDES",
     "title": "Replicating an LDES using the LDES Client",
     "content": ". | Create a ldio.yml file in the same directory as your docker-compose.yml with the following content: . orchestrator: pipelines: - name: gipod-replicator description: \"HTTP polling, OSLO transformation, version creation &amp; HTTP sending.\" input: name: be.vlaanderen.informatievlaanderen.ldes.ldi.client.LdioLdesClient config: url: https://private-api.gipod.vlaanderen.be/api/v1/ldes/mobility-hindrances outputs: - name: be.vlaanderen.informatievlaanderen.ldes.ldio.LdioHttpOut config: endpoint: http://host.docker.internal:8080/mobility-hindrances content-type: application/n-quads . | Execute the following command to start up the LDIO docker compose up ldio-workbench -d . | Validate your LDES server is being populated by going to http://localhost:8080/mobility-hindrances/by-page?pageNumber=1 and http://localhost:8080/mobility-hindrances/time-based. These streams should fill up as the LDES Client send members to your server. | . ",
     "url": "/quickstart/Publish_LDES#replicating-an-ldes-using-the-ldes-client",
     
     "relUrl": "/quickstart/Publish_LDES#replicating-an-ldes-using-the-ldes-client"
-  },"34": {
+  },"37": {
     "doc": "Publish an LDES",
     "title": "Tear down the infrastructure and remove the volumes",
     "content": ". | Within the working directory, please run docker rm -f $(docker ps -a -q) | . ",
     "url": "/quickstart/Publish_LDES#tear-down-the-infrastructure-and-remove-the-volumes",
     
     "relUrl": "/quickstart/Publish_LDES#tear-down-the-infrastructure-and-remove-the-volumes"
-  },"35": {
+  },"38": {
     "doc": "Quick start",
     "title": "Quick start",
     "content": " ",
     "url": "/quickstart/Quickstart",
     
     "relUrl": "/quickstart/Quickstart"
-  },"36": {
+  },"39": {
     "doc": "Use case LDES server",
     "title": "Use case LDES server",
     "content": "Having trouble implementing these examples? Please post your issue on the VSDS Tech docs repo. Apache Kafka, Fiware-Orien Context Broker, and MQTT can be used as a Publisher to the VSDS LDES Ecosystem. The following examples will explain the use cases. ",
     "url": "/quickstart/Use_case_LDES_server",
     
     "relUrl": "/quickstart/Use_case_LDES_server"
-  },"37": {
+  },"40": {
     "doc": "Use case LDES server",
     "title": "Kafka to LDES server",
     "content": "Apache Kafka can be used as a data provider for ingesting data topics into the LDES ecosystem. The diagram below illustrates how the VSDS NIFI solution subscribes to a Kafka stream, updates the dataset’s attributes, converts it into an LDES-formatted stream, and uses HTTP protocols to publish it to the LDES Server. This process enables fragmentation or pagination of the data. This GitHub repository demonstrates the configuration of transferring subscribed GRAR (Building units, addresses &amp; parcels) Kafka data stream to the published substring fragmented LDES Stream using LDES Server. As we have no control over the GRAR system, the demo uses a JSON Data Generator which produces a continuous stream of addresses as an alternative to the GRAR system. Also, the Apache NIFI has standard Kafka Reader processors for subscribing to Kafka stream, please modify the nifi-workflow.json accordingly based on your environment. An example setup with Kafka can be as follow (GRAR.json), please modify the credentials for the Kafka topic accordingly: . To try out the demo, you need to make sure the required ports for LDES Server and NIFI are free to be used. For the details, please refer to docker-compose.yml. The steps are composed of the following steps: . 1. Docker run start all required docker images. 2. Upload a pre-defined NiFi workflow. 3. Start the NiFi workflow. 4. Start the address ingestion. (Modify according to your Kafka setup) . Please follow README.md for step-by-step guide. ",
     "url": "/quickstart/Use_case_LDES_server#kafka-to-ldes-server",
     
     "relUrl": "/quickstart/Use_case_LDES_server#kafka-to-ldes-server"
-  },"38": {
+  },"41": {
     "doc": "Use case LDES server",
     "title": "MQTT to LDES server",
     "content": ". ",
     "url": "/quickstart/Use_case_LDES_server#mqtt-to-ldes-server",
     
     "relUrl": "/quickstart/Use_case_LDES_server#mqtt-to-ldes-server"
-  },"39": {
+  },"42": {
     "doc": "Use case LDES server",
     "title": "Fiware to LDES server",
     "content": "The FIWARE-Orion Context Broker (OCB) can be integrated as a data provider with the VSDS LDES (Linked Data Event Streams) Server. The OCB is an open-source software component developed by FIWARE that can manage real-time context information by receiving updates from IoT devices, sensors, and other sources and storing this information in a centralized location. One example of this integration is demonstrated in the diagram below, which illustrates the use case of onboarding the Internet of Water (VMM) data. In this case, the OCB is integrated into the LDES ecosystem to publish context updates to an LDES stream. The VSDS NIFI solution is used to translate the context data into LDES events and publish them to the LDES stream via an update attributes processor, an OSLO converter processor, and an LdesConverter process NIFI pipeline. Once the context updates are published to the LDES Sever in LDES formatted stream, they can be processed and stored in the LDES Server as linked data. This makes the context information available for further analysis and uses in other systems. ",
     "url": "/quickstart/Use_case_LDES_server#fiware-to-ldes-server",
     
     "relUrl": "/quickstart/Use_case_LDES_server#fiware-to-ldes-server"
-  },"40": {
+  },"43": {
     "doc": "Release management",
     "title": "Release management",
     "content": " ",
     "url": "/release/Release_Management",
     
     "relUrl": "/release/Release_Management"
-  },"41": {
+  },"44": {
     "doc": "Release management",
     "title": "LDES Server ",
     "content": "Versions: . | Latest Official version: | Latest Alpha version: | . Go to the LDES Server Github Releases for all the releases. ",
     "url": "/release/Release_Management#ldes-server-",
     
     "relUrl": "/release/Release_Management#ldes-server-"
-  },"42": {
+  },"45": {
     "doc": "Release management",
     "title": "Linked Data Interactions ",
     "content": "The Linked Data Interactions Repo (LDI) is a bundle of basic SDKs used to receive, generate, transform and output Linked Data. This project is set up in the context of the VSDS Project to ease adopting LDES on data consumer and producer side. Go to the LDI Github Releases for all the releases. Linked Data Interactions Orchestrator (LDIO) . The Linked Data Interactions Orchestrator is built to be a lightweight Linked Data pipeline framework. For more detail on how to use the LDIO, please visit the LDIO Documentation. Versions: . | Latest Official version: | Latest Alpha version: | . Linked Data Interactions for Apache NiFi . To also support existing users of Apache NiFi, all LDI components have been made available as NiFi component. For that, a specially bundled NiFi Docker image is available. Documentation on how to use the individual Processors can be found in the in-app documentation and on the LDI NiFi docs. Versions: . | Latest Official version: | Latest Alpha version: | . ",
     "url": "/release/Release_Management#linked-data-interactions-",
     
     "relUrl": "/release/Release_Management#linked-data-interactions-"
-  },"43": {
+  },"46": {
     "doc": "Release management",
     "title": "Which version should I use?",
     "content": ". | As a general recommendation, the official release is the goto version to use. This is the ideal version to use on Production. | The alpha/snapshot versions available on dockerhub provide a certain stability, but have not been internally validated on specification compliance. These versions can be used for non-production environments (test/acceptance/…) | The images found on GitHub itself should not be used for anything other than testing, they are prone to changes and do not come with any support. | . ",
     "url": "/release/Release_Management#which-version-should-i-use",
     
     "relUrl": "/release/Release_Management#which-version-should-i-use"
-  },"44": {
+  },"47": {
     "doc": "Release management",
     "title": "Notification of new releases",
     "content": "To get informed when a new version of a building block is released, go to ‘watch’. On the notifications page, you can see your personal notification subscribtions . ",

@@ -4,7 +4,7 @@ layout: home
 sort: 2
 ---
 
-# Basic concept linked data
+# Basic concepts of linked data
 
 
 In 2009, the pioneer of the worldwide web, Tim Berners-Lee, presented a TED talk about linked data as the next phase of the internet, sometimes referred to as the Semantic Web. It is a vision of the evolution of the web of documents into the semantic web, where meaning is added through linked data so that, in addition to the current -human- users of the web, machines and computers can understand and interpret the meaning of data.
@@ -42,7 +42,10 @@ Linked Data serialization formats are designed to encode structured data for int
 
 In the frame of the Flanders Smart Data Spacen, for the moment, only the most commonly used serializations can be chosen in the configuration options of the building blocks. Each format offers unique features and is suitable for different use cases:
 
+
 ### JSON-ld
+
+Configuration option building block: <i>```	application/ld+json```<i>
 
 JSON-LD is a lightweight Linked Data format. It is easy for humans to read and write. It is based on the already successful JSON format and provides a way to help JSON data interoperate at Web-scale. JSON-LD is an ideal data format for programming environments, REST Web services, and unstructured databases such as Apache CouchDB and MongoDB.
 
@@ -58,11 +61,13 @@ JSON-LD is a lightweight Linked Data format. It is easy for humans to read and w
 
 ### TURTLE (ttl)
 
+Configuration option building block: <i>```	text/turtle```<i>
+
 Turtle (Terse RDF Triple Language) is a serialization format for expressing data in the Resource Description Framework (RDF) that is designed to be compact and readable by humans. RDF is a standard model for data interchange on the web, which allows data to be linked to other data, enabling a wide range of web-based services. Turtle represents this linked data in a way that emphasizes simplicity and ease of understanding, using a syntax that closely resembles the way triples (subject, predicate, object) are naturally described.
 
 In Turtle, each statement (or triple) consists of a subject, a predicate, and an object, followed by a period. It uses prefixes to shorten URIs (Uniform Resource Identifiers), making the data more compact and easier to read.
 
-example:
+Example:
 
 ```turtle
 @base <http://example.org/> .
@@ -84,9 +89,12 @@ example:
 
 ### N-Quads
 
+Configuration option building block: <i>```application/n-quads```<i>
+
 N-Quads is a serialization format designed for RDF (Resource Description Framework) datasets that extends the simplicity and effectiveness of the Turtle format to support named graphs within RDF data. Named graphs are a way of grouping sets of triples, allowing for the representation of multiple, discrete graphs within a single document. This feature is particularly useful for working with complex datasets that involve provenance, versioning, or different viewpoints within the same dataset, facilitating more granular control and organization of RDF data.
 
 An N-Quads document consists of a series of statements, where each statement represents a triple (subject, predicate, object) similar to Turtle, with the addition of a fourth element that specifies the graph name (context) to which the triple belongs. Each statement in N-Quads is a line in the file, ending with a period, making it straightforward to parse and generate.
+
 
 ```turtle
 <http://one.example/subject1> <http://one.example/predicate1> <http://one.example/object1> <http://example.org/graph3> . # comments here
