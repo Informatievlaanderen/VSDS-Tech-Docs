@@ -35,12 +35,12 @@ In the context of linked data, subjects and objects refer to individual pieces o
 
 In the figure above, the subject http://example.com/person/alice represents Alice, the predicate http://example.com/vocab/isAFriendOf represents the relationship “is a friend of,” and the object http://example.com/person/bob represents Bob.
 
+
 ## Different types of serialization
 
 Linked Data serialization formats are designed to encode structured data for interchange on the web, enabling the sharing and connecting of data across different sources. Besides Turtle, XML RDF, and N-Quads, several other serialization formats are commonly used in the context of Linked Data and RDF. 
 
 In the frame of the Flanders Smart Data Spacen, for the moment, only the most commonly used serializations can be chosen in the configuration options of the building blocks. Each format offers unique features and is suitable for different use cases:
-
 
 ### JSON-ld
 
@@ -64,7 +64,7 @@ In Turtle, each statement (or triple) consists of a subject, a predicate, and an
 
 example:
 
-```ttl
+```turtle
 @base <http://example.org/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -88,7 +88,7 @@ N-Quads is a serialization format designed for RDF (Resource Description Framewo
 
 An N-Quads document consists of a series of statements, where each statement represents a triple (subject, predicate, object) similar to Turtle, with the addition of a fourth element that specifies the graph name (context) to which the triple belongs. Each statement in N-Quads is a line in the file, ending with a period, making it straightforward to parse and generate.
 
-```ttl
+```turtle
 <http://one.example/subject1> <http://one.example/predicate1> <http://one.example/object1> <http://example.org/graph3> . # comments here
 # or on a line by themselves
 _:subject1 <http://an.example/predicate1> "object1" <http://example.org/graph1> .

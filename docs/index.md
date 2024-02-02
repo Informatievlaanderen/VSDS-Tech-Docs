@@ -23,7 +23,7 @@ Based on a few use cases, we try to teach you in a light-hearted way how to publ
 <div style="display: flex; justify-content: space-around;">
 
 
-<a href="https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-inputs/ldio-ldes-client">
+<a href="https://github.com/Informatievlaanderen/VSDS-Onboarding-Example">
 <button style="background-color: #fafbfc; color: #666666; padding: 10px 20px; width: 200px; border: 0.3px solid rgb(0, 200, 171); border-radius: 10px; cursor: pointer;">
         Learn by doing (elaborated examples)
     </button>
