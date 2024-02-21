@@ -25,7 +25,7 @@ The LDES server is able to receive data via HTTP ingestion. Specifically, the se
 
 Once the objects in the dataset are LDES-compliant members (whether or not after conversion to a version object) and the LDES member has been added to the LDES server, the server can effortlessly publish the LDES member as part of the LDES.
 
-More information on the HTTP ingestion can be found [here](https://github.com/Informatievlaanderen/VSDS-LDESServer4J#example-http-ingest-fetch-configuration).
+More information on the HTTP ingestion can be found [here](https://informatievlaanderen.github.io/VSDS-LDESServer4J/ingest/http).
 
 Example HTTP Ingest-Fetch Configuration:
 
