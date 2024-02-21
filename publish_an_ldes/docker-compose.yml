@@ -2,7 +2,7 @@ version: "3.3"
 services:
   ldes-server:
     container_name: basic_ldes-server
-    image: ldes/ldes-server:latest
+    image: ldes/ldes-server:2.10.0-SNAPSHOT # you can safely change this to the latest 2.x.y version
     environment:
       - SPRING_CONFIG_LOCATION=/config/
     volumes:

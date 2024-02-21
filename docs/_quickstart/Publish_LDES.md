@@ -57,7 +57,7 @@ To start a default LDES Server, a few basic steps are needed.
   services:
     ldes-server:
       container_name: basic_ldes-server
-      image: ldes/ldes-server:1.0.0-SNAPSHOT
+      image: ldes/ldes-server:2.10.0-SNAPSHOT # you can safely change this to the latest 2.x.y version
       environment:
         - SPRING_CONFIG_LOCATION=/config/
       volumes:
@@ -94,7 +94,17 @@ To start a default LDES Server, a few basic steps are needed.
       name: quick_start_network
   ```
 
-- Run `docker compose up` within the work directory of `.yml` file, to start the containers.
+- Run this command within the work directory of `.yml` file, to start the containers:
+
+```bash
+docker compose up -d
+while ! docker logs $(docker ps -q -f "name=ldes-server$") 2> /dev/null | grep 'Started Application in' ; do sleep 1; done
+```
+
+{: .note}
+Note that we start the containers as deamons and then wait for the LDES server to be available by checking every second that the container log file contains the magic string Started Application in. You could also simply start it with docker compose up and wait until you actually see this magic string, but then you need to open a new command shell to execute the commands in the next sections.
+
+
 - The LDES Server is now available at port `8080` and accepts members via `HTTP POST` requests.
 - We will now configure the LDES Server. (note that this part can also be done with the Swagger endpoint (`/v1/swagger`), where more detailed documentation is available)
 
@@ -123,40 +133,40 @@ curl -X 'POST' \
     - A time-based fragmented view. This will fragment the members based on their timebased property. This value is by default set to `http://www.w3.org/ns/prov#generatedAtTime`
 
   ```bash
-  curl -X 'PUT' 'http://localhost:8080/admin/api/v1/eventstreams' \
+  curl -X 'POST' \
+  'http://localhost:8080/admin/api/v1/eventstreams' \
   -H 'accept: text/turtle' \
   -H 'Content-Type: text/turtle' \
-  --data-raw '@prefix ldes: <https://w3id.org/ldes#> .
-              @prefix dcterms: <http://purl.org/dc/terms/> .
-              @prefix tree: <https://w3id.org/tree#>.
-              @prefix sh:   <http://www.w3.org/ns/shacl#> .
-              @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-              @prefix example: <http://example.org/> .
-              @prefix collection: </mobility-hindrances/> .
+  --data-raw '  @prefix ldes: <https://w3id.org/ldes#> .
+                @prefix dcterms: <http://purl.org/dc/terms/> .
+                @prefix tree: <https://w3id.org/tree#>.
+                @prefix sh:   <http://www.w3.org/ns/shacl#> .
+                @prefix server: <http://localhost:8080/> .
+                @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+                @prefix collection: <http://localhost:8080/mobility-hindrances/> .
 
+                server:mobility-hindrances a ldes:EventStream ;
+                    ldes:timestampPath dcterms:created ;
+                    ldes:versionOfPath dcterms:isVersionOf ;
+                    tree:shape collection:shape .
 
-              </mobility-hindrances> a ldes:EventStream ;
-                  ldes:timestampPath dcterms:created ;
-                  ldes:versionOfPath dcterms:isVersionOf ;
-                  example:memberType <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder> ;
-                  example:hasDefaultView "true"^^xsd:boolean ;
-                  ldes:view collection:time-based ;
-                  tree:shape [
-                      a sh:NodeShape ;
-                  ] .
+                collection:shape a sh:NodeShape ;
+                    sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder> .
+                
 
-              collection:time-based tree:viewDescription [
-                  ldes:retentionPolicy [
-                      a ldes:DurationAgoPolicy  ;
-                      tree:value "PT2M"^^xsd:duration ;
-                  ] ;
-                  tree:fragmentationStrategy ([
-                      a tree:Fragmentation ;
-                      tree:name "timebased" ;
-                      tree:memberLimit "20" ;
-                  ]) ;
-              ] .
-      '
+                collection:by-time tree:viewDescription [
+                ldes:retentionPolicy [
+                    a ldes:DurationAgoPolicy  ;
+                    tree:value "PT2M"^^xsd:duration ;
+                ] ;
+                tree:fragmentationStrategy ([
+                    a tree:HierarchicalTimeBasedFragmentation  ;
+                    tree:maxGranularity "day" ;
+                tree:fragmentationPath ldes:timestampPath ;
+                ]) ;
+                tree:pageSize "20"^^<http://www.w3.org/2001/XMLSchema#int> 
+            ] .
+            '
   ```
 
 - Let's add some DCAT metadata for this collection:
@@ -183,7 +193,7 @@ curl -X 'POST' \
 
   ```bash
   curl -X 'POST' \
-  'http://localhost:8080/admin/api/v1/eventstreams/mobility-hindrances/views/time-based/dcat' \
+  'http://localhost:8080/admin/api/v1/eventstreams/mobility-hindrances/views/by-time/dcat' \
   -H 'accept: */*' \
   -H 'Content-Type: text/turtle' \
   -d '@prefix dct:   <http://purl.org/dc/terms/> .
@@ -202,7 +212,7 @@ curl -X 'POST' \
   - Will have a default view, which provides a basic view using a paginated fragmention. This also enables snapshotting.
 
   ```bash
-  curl -X 'PUT' 'http://localhost:8080/admin/api/v1/eventstreams' \
+  curl -X 'POST' 'http://localhost:8080/admin/api/v1/eventstreams' \
   -H 'accept: text/turtle' \
   -H 'Content-Type: text/turtle' \
   --data-raw '@prefix ldes: <https://w3id.org/ldes#> .
@@ -212,9 +222,10 @@ curl -X 'POST' \
               @prefix sh:   <http://www.w3.org/ns/shacl#> .
               @prefix server: <http://localhost:8080/> .
               @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+              @prefix collection:  <http://localhost:8080/observations> .
 
 
-              server:observations a ldes:EventStream ;
+              </observations> a ldes:EventStream ;
                   ldes:timestampPath dcterms:created ;
                   ldes:versionOfPath dcterms:isVersionOf ;
                   example:memberType <https://data.vlaanderen.be/ns/mobiliteit#ObservationCollection> ;
@@ -222,6 +233,9 @@ curl -X 'POST' \
                   tree:shape [
                       a sh:NodeShape ;
                   ] .
+
+
+              
               '
   ```
 
@@ -284,6 +298,15 @@ curl -X 'POST' \
   ```bash
   curl -X POST http://localhost:8080/observations -H "Content-Type: application/ttl" -d "@observation.ttl"
   ```
+
+To check out our LDES:
+```bash
+curl "http://localhost:8080/observations"
+```
+
+{: .note}
+Note that you can create more than one view of a LDES, even for simple pagination by specifying a different view URI and page size. Later when we learn about retention policies and different fragmentation strategies, this may make more sense. For now remember that you can create a view before or after you ingest data, You can delete views and re-create them with different options. For this, you will need to use the administration API. This, you can find on http://localhost:8080/v1/swagger-ui/index.html
+
 
 ## Replicating an LDES using the LDES Client
 

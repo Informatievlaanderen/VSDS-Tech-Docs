@@ -8,9 +8,9 @@ curl -X 'POST' 'http://localhost:8080/admin/api/v1/eventstreams' \
             @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
             @prefix example: <http://example.org/> .
             @prefix collection: <http://localhost:8080/mobility-hindrances/> .
+            @prefix server: <http://localhost:8080>
 
-
-            </time-based> a ldes:EventStream ;
+            </mobility-hindrances> a ldes:EventStream ;
                 ldes:timestampPath dcterms:created ;
                 ldes:versionOfPath dcterms:isVersionOf ;
                 example:memberType <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder> ;
@@ -20,7 +20,7 @@ curl -X 'POST' 'http://localhost:8080/admin/api/v1/eventstreams' \
                     a sh:NodeShape ;
                 ] .
 
-            collection:time-based tree:viewDescription [
+            <mobility-hindrances/by-time> tree:viewDescription [
                 ldes:retentionPolicy [
                     a ldes:DurationAgoPolicy  ;
                     tree:value "PT2M"^^xsd:duration ;
