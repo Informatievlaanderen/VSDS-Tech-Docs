@@ -10,7 +10,7 @@ sort: 0
 This example focuses on both publishing and consuming a [Linked Data Event Stream](https://semiceu.github.io/LinkedDataEventStreams/) (LDES). We start by explaining how to setup an LDES server and publish data as an LDES, followed by the setup of the LDES client to replicate an LDES. In this example, the data examples are described with [OSLO](https://data.vlaanderen.be/) (the Flemish Interoperability Program) ontologies.
 
 <a href="https://github.com/Informatievlaanderen/VSDS-Tech-Docs/tree/main/docs/files/quickstart" download>
-The files you will use for this quick start guide is available here
+The files you will use for this quick start guide are here available
 </a>
 <br>
 <br>
