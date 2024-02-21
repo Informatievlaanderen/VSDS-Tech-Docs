@@ -301,7 +301,7 @@ curl -X 'POST' \
         outputs:
           - name: be.vlaanderen.informatievlaanderen.ldes.ldio.LdioHttpOut
             config:
-              endpoint: http://host.docker.internal:8080/mobility-hindrances
+              endpoint: http://ldio-workbench:8080/mobility-hindrances
               content-type: application/n-quads
   ```
 
