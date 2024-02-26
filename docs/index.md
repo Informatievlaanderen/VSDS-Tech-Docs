@@ -25,7 +25,7 @@ Based on a few use cases, we try to teach you in a light-hearted way how to publ
 
 <a href="https://github.com/Informatievlaanderen/VSDS-Onboarding-Example">
 <button style="background-color: #fafbfc; color: #666666; padding: 10px 20px; width: 200px; border: 0.3px solid rgb(0, 200, 171); border-radius: 10px; cursor: pointer;">
-        Learn by doing (elaborated examples)
+        Tutorials (Learn by doing)
     </button>
 </a>
 </div>

@@ -19,16 +19,19 @@ curl -X 'POST' \
                     sh:targetClass <https://data.vlaanderen.be/ns/mobiliteit#Mobiliteitshinder> .
                 
 
-                collection:by-time tree:viewDescription [
-                ldes:retentionPolicy [
-                    a ldes:DurationAgoPolicy  ;
-                    tree:value "PT2M"^^xsd:duration ;
-                ] ;
-                tree:fragmentationStrategy ([
-                    a tree:HierarchicalTimeBasedFragmentation  ;
-                    tree:maxGranularity "day" ;
-                tree:fragmentationPath ldes:timestampPath ;
-                ]) ;
-                tree:pageSize "20"^^<http://www.w3.org/2001/XMLSchema#int> 
-            ] .
+                collection:timebased tree:viewDescription [
+                    tree:fragmentationStrategy ([
+                      a tree:HierarchicalTimeBasedFragmentation ;
+                      ldes:timestampPath dcterms:created 
+                      tree:maxGranularity "day" ;
+                      tree:fragmentationPath ldes:timestampPath ;
+                      ]) ;
+                      tree:pageSize "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                  ] .
+              
+                collection:pagination tree:viewDescription [
+                    tree:fragmentationStrategy  () ;
+                      tree:pageSize "100"^^<http://www.w3.org/2001/XMLSchema#int> ;
+                  ] .
+
             '
