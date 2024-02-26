@@ -19,7 +19,7 @@ The files you will use for this quick start guide are here available
 <br>
 
 {: .note }
-This quick start example demonstrates only a small amount of the capabilities of the LDES Server. For more information about the LDES server, please consult the [LDES Server Manual](https://github.com/Informatievlaanderen/VSDS-LDESServer4J).
+This quick start example demonstrates only a small amount of the capabilities of the LDES Server. For more information about the LDES server, please consult the [Configuring a new Event Stream](https://informatievlaanderen.github.io/VSDS-LDESServer4J/configuration/event-stream) in the [LDES Server Manual](https://informatievlaanderen.github.io/VSDS-LDESServer4J/).
 
 ## Before starting
 
@@ -477,4 +477,3 @@ Note that you can create more than one view of a LDES, even for simple paginatio
 ## Tear down the infrastructure and remove the volumes
 
 - Within the working directory, please run `docker rm -f $(docker ps -a -q)`
-
