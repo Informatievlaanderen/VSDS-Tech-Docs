@@ -15,7 +15,7 @@ An LDES is defined as a collection of immutable objects, often referred to as _L
 These _members_ are described using a specific format called RDF, which stands for Resource Description Framework. RDF is one of the corner stones of Linked Data and on which LDES continues to build.
 
 {: .highlight }
-More information on Linked Data can be found [here](https://www.w3.org/standards/semanticweb/data).
+More information on Linked Data can be found [here](https://www.w3.org/wiki/LinkedData#:~:text=The%20term%20Linked%20Data%20refers,URIs%20as%20names%20for%20things).
 
 The LDES specification is based on a hypermedia specification, called the [TREE specification](https://w3id.org/tree/specification). The TREE specification originates from the idea to provide an alternative to one-dimensional HTTP pagination. It allows to fragment a collection of items and interlink these fragments. Instead of linking to the next or previous page, the relation describes what elements can be found by following the link to another fragment. The LDES specification extends the TREE specification by stating that every item in the collection **_must_** be immutable. The TREE specification is compatible with other specifications such as [activitystreams-core](https://www.w3.org/TR/activitystreams-core/), [VOCAB-DCAT-2](https://www.w3.org/TR/vocab-dcat-2), [LDP](https://www.w3.org/TR/ldp/), or Shape Trees. For specific compatibility rules, please refer to the [TREE specification](https://w3id.org/tree/specification).
 

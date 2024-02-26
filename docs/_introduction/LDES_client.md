@@ -1,10 +1,10 @@
 ---
-title: Replication and synchronisation
+title: Consume an LDES
 layout: home
 sort: 3
 ---
 
-# Replication and synchronisation
+# Consume an LDES
 
 <p align="center"><img src="/VSDS-Tech-Docs/images/LDES%20client.png" width="60%" text-align="center"></p>
 

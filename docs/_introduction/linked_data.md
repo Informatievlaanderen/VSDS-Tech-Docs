@@ -17,18 +17,17 @@ Linked open data is a community project overseen by the W3C organisation and aim
 
 Tim Berners-Lee has proposed a 5-star system for rating the quality of open data on the Web, with Linked Open Data receiving the highest ranking:
 
-⭐: data is openly available in some format (e.g. pdf);
-⭐⭐: data is available in a structured format(e.g. .xls);
-⭐⭐⭐: data is available in a non-proprietary structured format (.csv);
-⭐⭐⭐⭐: data follows W3C standards, like using RDF and URIs;
-⭐⭐⭐⭐⭐: all of the other, plus links to other Linked Open Data sources to provide a context.
+⭐: data is openly available in some format (e.g. pdf); <br>
+⭐⭐: data is available in a structured format(e.g. .xls); <br>
+⭐⭐⭐: data is available in a non-proprietary structured format (.csv); <br>
+⭐⭐⭐⭐: data follows W3C standards, like using RDF and URIs; <br>
+⭐⭐⭐⭐⭐: all of the other, plus links to other Linked Open Data sources to provide a context. <br>
 
 Linked data is structured data linked to other data by relationships or connections to make it more valuable through semantic searches. It expands on established Web technologies like HTTP and URIs. Still, it uses them to communicate information in a way that computers can read automatically rather than only serving web pages for human readers. The idea behind linked data is to turn the Internet into a global decentralized machine-readable database.
 
 ![alt text](image-5.png)
 
-Linked data event stream, Linked data event stream, Linked data event stream, Linked data event stream, Linked data event stream, Linked data event stream, Linked data event stream
-Visualization of an RDF (RDF 1.1 Primer (w3.org))
+
 The figure above visualizes Resource Description Framework (RDF). RDF is a standard data model for representing and sharing information on the Web, based on the idea of using triples to represent data. A triple consists of three parts: a subject, a predicate, and an object.
 
 In the context of linked data, subjects and objects refer to individual pieces of data, such as people, places, or things. Predicates refer to the connections or associations between different nodes, such as the fact that a person is the painter of a painting.

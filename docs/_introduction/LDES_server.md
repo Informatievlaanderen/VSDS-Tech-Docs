@@ -301,7 +301,7 @@ The LDES server typically adds an LDES member to the "lowest" possible fragment,
 
 ### Retention policy
 
-A [retention policy](https://github.com/Informatievlaanderen/VSDS-LDESServer4J#example-retention) determines how long data will be kept and stored. Its purpose is to ensure the efficient use of storage resources by controlling data growth over time. Setting a retention policy per view to minimise storage fill-up is possible.
+A retention policydetermines how long data will be kept and stored. Its purpose is to ensure the efficient use of storage resources by controlling data growth over time. Setting a retention policy per view to minimise storage fill-up is possible.
 
 <p align="center"><img src="/VSDS-Tech-Docs/images/retention_policy.png" width="60%" text-align="center"></p>
 
@@ -421,7 +421,6 @@ More information on configuring DCAT on the LDES Server can be found [here](http
    dc:description "LDES for my data collection"@en .
 ```
 
-####
 
 ## Setting up the LDES Server using API
 
