@@ -19,20 +19,21 @@ callouts:
 
 # Define Jekyll collections
 collections:
-  introduction:
+  basic:
     permalink: "/:collection/:path"
     output: true
-  quickstart:
+  pipeline:
     permalink: "/:collection/:path"
     output: true
-  release:
+  publisher:
     permalink: "/:collection/:path"
     output: true
-
-
-
-
-
+  consumer:
+    permalink: "/:collection/:path"
+    output: true
+  intermediary:
+    permalink: "/:collection/:path"
+    output: true
 
 
 # Enable or disable the site search
@@ -64,12 +65,16 @@ search:
 
 just_the_docs:
   collections:
-    introduction:
+    basic:
       name: Basic concepts
-    quickstart:
-      name: Quickstart
-    release:
-      name: Release Management
+    pipeline:
+      name: General Pipeline
+    publisher:
+      name: Publishing Pipeline
+    consumer:
+      name: Consuming Pipeline
+    intermediary:
+      name: Intermediary Pipeline
 
 
 
