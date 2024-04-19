@@ -28,10 +28,19 @@ def find_dead_links(base_url):
                     href = link['href']
                     print('checking : ', href)
                     if not href.startswith('http'):
+                        print('nu')
                         href = urljoin(base_url, href)
-                    if href not in visited:
                         if is_dead_link(href):
                             dead_links.add(href)
+                        else:
+                            if href not in visited:
+                                print('crawl start voor:', href)
+                                crawl(url)
+                    else:
+                        if is_dead_link(href):
+                            dead_links.add(href)
+
+                            
 
         except requests.RequestException:
             dead_links.add(url)
@@ -40,7 +49,7 @@ def find_dead_links(base_url):
     return dead_links
 
 # Replace this URL with the one you want to check
-base_url = "https://informatievlaanderen.github.io/VSDS-Tech-Docs/"
+base_url = "https://informatievlaanderen.github.io/VSDS-Tech-Docs/consumer/inputs/ldes-client"
 dead_links = find_dead_links(base_url)
 
 for link in dead_links:
