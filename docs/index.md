@@ -10,7 +10,7 @@ This technical documentation is here to guide you through the <u>pipeline archit
 
 <br>
 
-Before exploring how to set up data pipelines, make sure to familiarize yourself with the foundational concepts. This includes understanding what the [Flanders Smart Data Space](https://www.vlaanderen.be/vlaamse-smart-data-space-portaal) is all about, grasping the [Linked Data principle](/basic/1_linked_data.html), and knowing what a [Linked Data Event Stream (LDES)](/basic/2_introduction.html) typically entails.
+Before exploring how to set up data pipelines, make sure to familiarize yourself with the foundational concepts. This includes understanding what the [Flanders Smart Data Space](https://www.vlaanderen.be/vlaamse-smart-data-space-portaal) is all about, grasping the [Linked Data principle](/VSDS-Tech-Docs/basic/1_linked_data.html), and knowing what a [Linked Data Event Stream (LDES)](/VSDS-Tech-Docs/basic/2_introduction.html) typically entails.
 
 ## Set up your Pipeline, and you are good to go
 
@@ -32,17 +32,17 @@ As a <b>data intermediary</b>, your objective is to collect LDES streams and the
 
 <div style="display: flex; justify-content: space-around;">
 
-<a href="/publisher/index.html">
+<a href="/VSDS-Tech-Docs/publisher/index.html">
 <button style="background-color: #fafbfc; color: #666666; padding: 10px 20px; width: 200px; border: 0.3px solid rgb(0, 200, 171); border-radius: 10px; cursor: pointer;">
     Publishing Pipeline
 </button></a>
 
-<a href="/intermediary/index.html">
+<a href="/VSDS-Tech-Docs/intermediary/index.html">
 <button style="background-color: #fafbfc; color: #666666; padding: 10px 20px; width: 200px; border: 0.3px solid rgb(0, 200, 171); border-radius: 10px; cursor: pointer;">
     Intermediary Pipeline
     </button></a>
 
-<a href="/consumer/index.html">
+<a href="/VSDS-Tech-Docs/consumer/index">
 <button style="background-color: #fafbfc; color: #666666; padding: 10px 20px; width: 200px; border: 0.3px solid rgb(0, 200, 171); border-radius: 10px; cursor: pointer;">
     Consuming Pipeline
     </button></a>
