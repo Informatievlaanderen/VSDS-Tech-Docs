@@ -13,7 +13,7 @@ the LDES server can be configured to create several fragmentations.
 Fragmentations are similar to indexes in databases but then published on the Web.
 The RDF predicate on which the fragmentation must be applied is defined through configuration.
 
-<p align="center"><img src="https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/fragmentation.png" width="60%" text-align="center"></p>
+<p align="center"><img src="https://informatievlaanderen.github.io/VSDS-Tech-Docs/assets/images/fragmentation.png" width="60%" text-align="center"></p>
 
 The fragmenting of a Linked Data Event Stream (LDES) is a crucial technique for managing and processing large amounts of data more efficiently.
 

@@ -64,14 +64,3 @@ Based on a few use cases, we try to teach you in a light-hearted way how to publ
 </a>
 </div>
 
-## Building Blocks
-
-Would you like more detailed information about the individual open-source building blocks? A complete hatch or section is dedicated to each individual building block. The purpose of these sections is to understand what different parameters you can use to get the perfect configuration of your building block.
-
-<div style="display: flex; justify-content: space-around;">
-
-<a href="/_consumer/index.html">
-<button style="background-color: #fafbfc; color: #666666; padding: 10px 20px; width: 200px; border: 0.3px solid rgb(0, 200, 171); border-radius: 10px; cursor: pointer;">
-    Building blocks
-</button></a>
-</div>

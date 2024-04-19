@@ -4,7 +4,6 @@ layout: home
 nav_order: 4
 ---
 
-
 # Structure of a Linked Data Event Stream
 
 As defined above, an LDES is a collection of members or _immutable objects_. The LDES spec works both for fast moving data and slow moving data. An example of fast moving data, such as sensor observations, is shown in the example below.
@@ -90,4 +89,4 @@ In this example, the entity with HTTP URI `<streetname1>` is not longer immutabl
 {: .note}
 It is important to note that once a client processes a member of an LDES, it should never have to process it again. Therefore, a Linked Data Event Stream client can maintain a list of already processed member IRIs in a cache. A reference implementation of a client is available as an open-source [SDK](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions/tree/main/ldi-core#1-ldes-client) as part of the Flanders Smart Data Space initiative.
 
-<p align="center"><img src="https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/versioning.png" width="60%" text-align="center"></p>
+<p align="center"><img src="https://informatievlaanderen.github.io/VSDS-Tech-Docs/assets/images/versioning.png" width="60%" text-align="center"></p>

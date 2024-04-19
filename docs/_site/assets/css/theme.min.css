@@ -1352,15 +1352,15 @@ dl.form-group > dd .form-control.is-autocheck-errored,
 }
 dl.form-group > dd .form-control.is-autocheck-loading,
 .form-group > .form-group-body .form-control.is-autocheck-loading {
-  background-image: url("/VSDS-Tech-documentation/images/spinners/octocat-spinner-16px.gif");
+  background-image: url("/VSDS-Tech-Docs/images/spinners/octocat-spinner-16px.gif");
 }
 dl.form-group > dd .form-control.is-autocheck-successful,
 .form-group > .form-group-body .form-control.is-autocheck-successful {
-  background-image: url("/VSDS-Tech-documentation/images/modules/ajax/success.png");
+  background-image: url("/VSDS-Tech-Docs/images/modules/ajax/success.png");
 }
 dl.form-group > dd .form-control.is-autocheck-errored,
 .form-group > .form-group-body .form-control.is-autocheck-errored {
-  background-image: url("/VSDS-Tech-documentation/images/modules/ajax/error.png");
+  background-image: url("/VSDS-Tech-Docs/images/modules/ajax/error.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min--moz-device-pixel-ratio: 2),
@@ -1379,15 +1379,15 @@ dl.form-group > dd .form-control.is-autocheck-errored,
   }
   dl.form-group > dd .form-control.is-autocheck-loading,
   .form-group > .form-group-body .form-control.is-autocheck-loading {
-    background-image: url("/VSDS-Tech-documentation/images/spinners/octocat-spinner-32.gif");
+    background-image: url("/VSDS-Tech-Docs/images/spinners/octocat-spinner-32.gif");
   }
   dl.form-group > dd .form-control.is-autocheck-successful,
   .form-group > .form-group-body .form-control.is-autocheck-successful {
-    background-image: url("/VSDS-Tech-documentation/images/modules/ajax/success@2x.png");
+    background-image: url("/VSDS-Tech-Docs/images/modules/ajax/success@2x.png");
   }
   dl.form-group > dd .form-control.is-autocheck-errored,
   .form-group > .form-group-body .form-control.is-autocheck-errored {
-    background-image: url("/VSDS-Tech-documentation/images/modules/ajax/error@2x.png");
+    background-image: url("/VSDS-Tech-Docs/images/modules/ajax/error@2x.png");
   }
 }
 .status-indicator {
@@ -1423,7 +1423,7 @@ dl.form-group > dd .form-control.is-autocheck-errored,
 }
 .status-indicator-loading {
   width: 16px;
-  background-image: url("/VSDS-Tech-documentation/images/spinners/octocat-spinner-32-EAF2F5.gif");
+  background-image: url("/VSDS-Tech-Docs/images/spinners/octocat-spinner-32-EAF2F5.gif");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 16px;
