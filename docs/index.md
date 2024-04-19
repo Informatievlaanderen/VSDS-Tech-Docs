@@ -32,7 +32,7 @@ As a <b>data intermediary</b>, your objective is to collect LDES streams and the
 
 <div style="display: flex; justify-content: space-around;">
 
-<a href="/publishing/index.html">
+<a href="/publisher/index.html">
 <button style="background-color: #fafbfc; color: #666666; padding: 10px 20px; width: 200px; border: 0.3px solid rgb(0, 200, 171); border-radius: 10px; cursor: pointer;">
     Publishing Pipeline
 </button></a>
@@ -42,7 +42,7 @@ As a <b>data intermediary</b>, your objective is to collect LDES streams and the
     Intermediary Pipeline
     </button></a>
 
-<a href="/consuming/index.html">
+<a href="/consumer/index.html">
 <button style="background-color: #fafbfc; color: #666666; padding: 10px 20px; width: 200px; border: 0.3px solid rgb(0, 200, 171); border-radius: 10px; cursor: pointer;">
     Consuming Pipeline
     </button></a>
