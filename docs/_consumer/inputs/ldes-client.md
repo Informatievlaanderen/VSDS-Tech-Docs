@@ -22,7 +22,6 @@ Processed members of mutable fragments are also kept in state. They are ignored 
 
 Within a fragment, members can be ordered based on a timestamp. The path to this timestamp has to be configured. If this path is missing, the members are ordered randomly.
 
-[VSDS Tech Docs]: https://informatievlaanderen.github.io/VSDS-Tech-Docs/introduction/LDES_client
 
 ```mermaid
 graph LR
@@ -48,7 +47,7 @@ To understand the functioning of an LDES client, it is important to understand h
 
 The LDES client component is written in Java and available as an [SDK](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions/tree/main/ldi-core/ldes-client) in the Linked Data Interactions repository. More information about Linked Data Interactions can be found [here](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/).
 
-The LDES Client contains the functionality to replicate and synchornise an LDES, and to persist its state for that process. More information on the functionalites can be found [here][VSDS Tech Docs].
+The LDES Client contains the functionality to replicate and synchornise an LDES, and to persist its state for that process.
 
 This is achieved by configuring the processor with an initial fragment URL. When the processor is triggered, the fragment will be processed, and all relations will be added to the (non-persisted) queue.
 
@@ -60,4 +59,3 @@ Processed members of mutable fragments are also kept in state. They are ignored 
 
 Within a fragment, members can be ordered based on a timestamp. The path to this timestamp has to be configured. If this path is missing, the members are ordered randomly.
 
-[VSDS Tech Docs]: https://informatievlaanderen.github.io/VSDS-Tech-Docs/introduction/LDES_client

@@ -29,7 +29,7 @@ def find_dead_links(base_url):
                     print('checking : ', href)
                     if not href.startswith('http'):
                         print('nu')
-                        href = urljoin(base_url, href)
+                        href = urljoin('https://informatievlaanderen.github.io/VSDS-Tech-Docs/', href)
                         if is_dead_link(href):
                             dead_links.add(href)
                         else:
