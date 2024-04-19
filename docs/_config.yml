@@ -4,7 +4,7 @@ remote_theme: just-the-docs/just-the-docs@v0.5.3
 
 url: https://just-the-docs.github.io
 
-favicon_ico: "https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/favicon.ico"
+favicon_ico: "https://informatievlaanderen.github.io/VSDS-Tech-Docs/assets/images/favicon.ico"
 
 kramdown:
   parse_block_html: true

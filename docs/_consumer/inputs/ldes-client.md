@@ -38,7 +38,7 @@ graph LR
 
 <br>
 
-<p align="center"><img src="https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/LDES%20client.png" width="60%" text-align="center"></p>
+<p align="center"><img src="https://informatievlaanderen.github.io/VSDS-Tech-Docs/assets/images/LDES%20client.png" width="60%" text-align="center"></p>
 
 The [LDES CLIENT](https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions) is designed for replication and synchronisation, meaning the client can retrieve members of an LDES but also checks regularly if new members are added and fetch them, allowing data consumers to stay up to date with the dataset.
 
