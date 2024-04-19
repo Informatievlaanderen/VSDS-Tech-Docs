@@ -3,7 +3,7 @@ layout: default
 title: 1. Input components
 has_children: true
 has_toc: true
-nav_order: 2
+nav_order: 1
 ---
 
 # Input components

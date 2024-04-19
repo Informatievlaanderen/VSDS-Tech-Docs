@@ -6,7 +6,7 @@ title: AMQP In
 
 # AMQP broker message In
 
-<b>LDIO Component Name:</b> <i>`Ldio:AmqpIn`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:AmqpIn`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-inputs/ldio-amqp-in) <br>
 <b>Apache Nifi Component Name:</b> <i>`ConsumeAMQP` </i> see [Apache Nifi reference guide](https://nifi.incubator.apache.org/docs/nifi-docs/components/org.apache.nifi/nifi-amqp-nar/1.23.2/org.apache.nifi.amqp.processors.ConsumeAMQP/index.html)
 
 <br>

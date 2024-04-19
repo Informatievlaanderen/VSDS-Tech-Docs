@@ -5,9 +5,10 @@ title: HTTP In
 nav_order: 3
 ---
 
-# LDIO HTTP In
+# HTTP In
 
-<b>LDIO Component Name:</b> <i>`Ldio:LdioHttpIn`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:LdioHttpIn`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-inputs/ldio-http-in) <br>
+
 <b>Apache Nifi Component Name:</b> <i>`InvokeHTTP`</i> see [Apache Nifi reference guide]()
 
 <br>

@@ -6,7 +6,7 @@ title: GeoJson to Wkt Transformer
 
 # GeoJson to Wkt Transformer
 
-<b>LDIO Component Name:</b> <i>`Ldio:GeoJsonToWktTransformer`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:GeoJsonToWktTransformer`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-transformers/ldio-geojson-to-wkt) <br>
 <b>Apache Nifi Component Name:</b> <i>`GeoJson-to-Wkt-Transformer`</i> see [Apache Nifi reference guide]()
 
 <br>

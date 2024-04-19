@@ -18,4 +18,4 @@ On the other hand, data consumers often have to deal with multiple versions or c
 
 To overcome these challenges, Linked Data Event Streams (LDES) provide a generic and flexible base API for datasets. With LDES, data consumers can set up workflow to automatically replicate the history of a dataset and stay in sync with the latest updates.
 
-<p align="center"><img src="/assets/images/LDES_API.png"  width="100%" text-align="center"></p>
+<p align="center"><img src="https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/LDES_API.png"  width="100%" text-align="center"></p>

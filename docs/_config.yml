@@ -4,7 +4,7 @@ remote_theme: just-the-docs/just-the-docs@v0.5.3
 
 url: https://just-the-docs.github.io
 
-favicon_ico: "/assets/images/favicon.ico"
+favicon_ico: "https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/favicon.ico"
 
 kramdown:
   parse_block_html: true
@@ -34,7 +34,6 @@ collections:
   intermediary:
     permalink: "/:collection/:path"
     output: true
-
 
 # Enable or disable the site search
 # Supports true (default) or false
@@ -76,8 +75,6 @@ just_the_docs:
     intermediary:
       name: Intermediary Pipeline
 
-
-
 enable_copy_code_button: true
 
 footer_content: " "
@@ -96,5 +93,3 @@ mermaid:
   # Version of mermaid library
   # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
   version: "9.1.3"
-
-

@@ -4,9 +4,9 @@ parent: LD Pipeline Adapters
 title: Json To JsonLd Transformer
 ---
 
-# LDIO Json To JsonLd Transformer
+# Json To JsonLd Transformer
 
-<b>LDIO Component Name:</b> <i>`Ldio:JsonToLdAdapter`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:JsonToLdAdapter`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-adapters/ldio-json-to-json-ld) <br>
 <b>Apache Nifi Component Name:</b> <i>`
 Json to Json LD Processor` </i> see [reference guide]()
 

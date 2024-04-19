@@ -6,7 +6,7 @@ title: RML Adapter
 
 # RML Adapter
 
-<b>LDIO Component Name:</b> <i>`Ldio:RmlAdapter`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:RmlAdapter`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-adapters/ldio-rml-adapter) <br>
 <b>Apache Nifi Component Name:</b> There is currently no RML adapter processor for Apache Nifi. 
 
 <br>

@@ -6,7 +6,7 @@ title: NGSI V2 to LD Adapter
 
 # NGSI v2 to LD Adapter
 
-<b>LDIO Component Name:</b> <i>`Ldio:NgsiV2ToLdAdapter`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:NgsiV2ToLdAdapter`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-adapters/ldio-ngsiv2-to-ld) <br>
 <b>Apache Nifi Component Name:</b> <i>`
 NgsiV2ToLdAdapter Processor` </i> see [reference guide]()
 

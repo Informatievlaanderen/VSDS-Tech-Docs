@@ -7944,13 +7944,13 @@ dl.form-group > dd .form-control.is-autocheck-loading, dl.form-group > dd .form-
   padding-right: 30px; }
 dl.form-group > dd .form-control.is-autocheck-loading,
 .form-group > .form-group-body .form-control.is-autocheck-loading {
-  background-image: url("/assets/images/spinners/octocat-spinner-16px.gif"); }
+  background-image: url("https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/spinners/octocat-spinner-16px.gif"); }
 dl.form-group > dd .form-control.is-autocheck-successful,
 .form-group > .form-group-body .form-control.is-autocheck-successful {
-  background-image: url("/assets/images/modules/ajax/success.png"); }
+  background-image: url("https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/modules/ajax/success.png"); }
 dl.form-group > dd .form-control.is-autocheck-errored,
 .form-group > .form-group-body .form-control.is-autocheck-errored {
-  background-image: url("/assets/images/modules/ajax/error.png"); }
+  background-image: url("https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/modules/ajax/error.png"); }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   dl.form-group > dd .form-control.is-autocheck-loading, dl.form-group > dd .form-control.is-autocheck-successful, dl.form-group > dd .form-control.is-autocheck-errored,
@@ -7960,13 +7960,13 @@ dl.form-group > dd .form-control.is-autocheck-errored,
     background-size: 16px 16px; }
   dl.form-group > dd .form-control.is-autocheck-loading,
   .form-group > .form-group-body .form-control.is-autocheck-loading {
-    background-image: url("/assets/images/spinners/octocat-spinner-32.gif"); }
+    background-image: url("https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/spinners/octocat-spinner-32.gif"); }
   dl.form-group > dd .form-control.is-autocheck-successful,
   .form-group > .form-group-body .form-control.is-autocheck-successful {
-    background-image: url("/assets/images/modules/ajax/success@2x.png"); }
+    background-image: url("https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/modules/ajax/success@2x.png"); }
   dl.form-group > dd .form-control.is-autocheck-errored,
   .form-group > .form-group-body .form-control.is-autocheck-errored {
-    background-image: url("/assets/images/modules/ajax/error@2x.png"); } }
+    background-image: url("https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/modules/ajax/error@2x.png"); } }
 .status-indicator {
   display: inline-block;
   width: 16px;
@@ -7995,7 +7995,7 @@ dl.form-group > dd .form-control.is-autocheck-errored,
 
 .status-indicator-loading {
   width: 16px;
-  background-image: url("/assets/images/spinners/octocat-spinner-32-EAF2F5.gif");
+  background-image: url("https://informatievlaanderen.github.io/VSDS-Tech-documentation/assets/images/spinners/octocat-spinner-32-EAF2F5.gif");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 16px; }

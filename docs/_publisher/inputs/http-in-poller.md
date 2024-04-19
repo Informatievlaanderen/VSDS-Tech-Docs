@@ -5,9 +5,10 @@ title: HTTP In Poller
 nav_order: 2
 ---
 
-# LDIO HTTP In Poller
+# HTTP In Poller
 
-<b>LDIO Component Name:</b> <i>`Ldio:LdioHttpInPoller`</i>see [reference guide]()
+<b>LDIO Component Name:</b> <i>`Ldio:LdioHttpInPoller`</i>see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-inputs/ldio-http-in-poller) <br>
+
 <b>Apache Nifi Component Name:</b> <i>`InvokeHTTP`</i> see [reference guide]()
 
 <br>

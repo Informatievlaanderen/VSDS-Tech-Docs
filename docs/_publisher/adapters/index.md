@@ -3,7 +3,7 @@ layout: default
 title: 2. Adapter components
 has_children: true
 has_toc: true
-nav_order: 3
+nav_order: 2
 ---
 
 # Adapter components

@@ -6,7 +6,7 @@ title: RDF Adapter
 
 # RDF Adapter
 
-<b>LDIO Component Name:</b> <i>`Ldio:RDFAdapter`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:RDFAdapter`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-adapters/ldio-rdf-adapter) <br>
 <b>Apache Nifi Component Name:</b> <i>`
 RDF serialisation Processor` </i> see [reference guide]()
 

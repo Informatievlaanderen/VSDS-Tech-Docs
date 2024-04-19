@@ -7,7 +7,7 @@ nav_order: 4
 
 # Kafka In
 
-<b>LDIO Component Name:</b> <i>`Ldio:LdioKafkaIn`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:LdioKafkaIn`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-inputs/ldio-kafka-in) <br>
 <b>Apache Nifi Component Name:</b> <i>`ConsumeKafka`</i> see [Apache Nifi reference guide](https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi/nifi-kafka-2-0-nar/1.24.0/org.apache.nifi.processors.kafka.pubsub.ConsumeKafka_2_0/index.html)
 
 <br>
