@@ -21,7 +21,6 @@ This Adapter only supports valid RDF mime types
 
 <br>
 
-An LDIO wrapper component for the [LDI RDF Adapter building block](../../core/ldi-adapters/rdf-adapter)
 
 ```mermaid
 graph LR

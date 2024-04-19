@@ -1,10 +1,10 @@
 import requests
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 
 def is_dead_link(url):
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
         if response.status_code == 200:
             return False
         else:
@@ -19,37 +19,39 @@ def find_dead_links(base_url):
     def crawl(url):
         if url in visited:
             return
+        print('Visiting:', url)
         visited.add(url)
         try:
-            response = requests.get(url)
+            response = requests.get(url, timeout=10)
             if response.status_code == 200:
                 soup = BeautifulSoup(response.content, 'html.parser')
                 for link in soup.find_all('a', href=True):
                     href = link['href']
-                    print('checking : ', href)
+                    # Volledige URL construeren indien nodig
                     if not href.startswith('http'):
-                        print('nu')
-                        href = urljoin('https://informatievlaanderen.github.io/VSDS-Tech-Docs/', href)
+                        href = urljoin(url, href)
+                    # Controleer of de URL binnen hetzelfde domein valt
+                    if urlparse(href).netloc != urlparse(base_url).netloc:
+                        continue
+                    if href not in visited:
                         if is_dead_link(href):
                             dead_links.add(href)
+                            print('Dead link found:', href)
                         else:
-                            if href not in visited:
-                                print('crawl start voor:', href)
-                                crawl(url)
+                            if "https://informatievlaanderen.github.io/VSDS-Tech-Docs/" in href:
+                                crawl(href)
                     else:
-                        if is_dead_link(href):
-                            dead_links.add(href)
-
-                            
+                        print('Already visited:', href)
 
         except requests.RequestException:
             dead_links.add(url)
+            print('Dead link due to error:', url)
 
     crawl(base_url)
     return dead_links
 
 # Replace this URL with the one you want to check
-base_url = "https://informatievlaanderen.github.io/VSDS-Tech-Docs/consumer/inputs/ldes-client"
+base_url = "https://informatievlaanderen.github.io/VSDS-Tech-Docs/"
 dead_links = find_dead_links(base_url)
 
 for link in dead_links:

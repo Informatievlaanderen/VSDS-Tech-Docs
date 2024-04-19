@@ -29,7 +29,6 @@ the shape to validate and reason about the data they receive.
 
 Defining a shape can be done through the `/admin/api/eventstreams/{event stream}/shape` endpoint.
 
-For more info, visit the Swagger API endpoint configured in [the run guide.](../how-to-run)
 
 ### Example
 

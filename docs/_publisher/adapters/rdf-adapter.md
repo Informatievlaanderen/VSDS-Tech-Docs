@@ -15,8 +15,6 @@ As the most basic Adapter of the LDI Core Building Blocks, the RDF Adapter will 
 RDF/XML, Turtle (Terse RDF Triple Language), N-Triples, N-Quads, JSON-LD (JSON for Linked Data), RDFa (RDF in attributes).
 
 
-More information about RDF serializations can be found [here](/basic/1_linked_data#different-types-of-serialization)
-
 
 ```mermaid
 graph LR

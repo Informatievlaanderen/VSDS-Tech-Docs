@@ -21,5 +21,3 @@ DCAT enables a publisher to describe datasets and data services in a catalog usi
 
 For more info on DCAT, visit the [DCAT publication](https://www.w3.org/TR/vocab-dcat-2/)
 
-{: .note }
-All DCAT API endpoints can be found on the Swagger UI endpoint configured in [the run guide.](../how-to-run)

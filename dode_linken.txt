@@ -1,0 +1,2 @@
+Dead link found: https://informatievlaanderen.github.io/VSDS-Tech-Docs/introduction/Specification#what-is-a-linked-data-event-stream  
+
