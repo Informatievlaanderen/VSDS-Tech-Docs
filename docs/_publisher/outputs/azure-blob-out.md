@@ -1,9 +1,3 @@
----
-layout: default
-parent: 4. Output components
-title: Azure Blob Out
----
-
 # LDIO Azure Blob Out
 
 <b>LDIO Component Name:</b> <i>`Ldio:AzureBlobOut`</i> see [reference guide]() <br>

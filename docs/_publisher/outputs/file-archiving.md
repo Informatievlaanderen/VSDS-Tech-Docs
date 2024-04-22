@@ -1,8 +1,3 @@
----
-layout: default
-parent: 4. Output components
-title: File archiving
----
 
 # Archive File Out
 

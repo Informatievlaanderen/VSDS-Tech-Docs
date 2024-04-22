@@ -6,7 +6,7 @@ title: HTTP Out
 
 # LDIO HTTP Out
 
-<b>LDIO Component Name:</b> <i>`Ldio:HttpOut`</i> see [reference guide]() <br>
+<b>LDIO Component Name:</b> <i>`Ldio:HttpOut`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-outputs/ldio-http-out) <br>
 <b>Apache Nifi Component Name:</b> <i>`InvokeHTTP` </i> see [Apache Nifi reference guide](https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi/nifi-standard-nar/1.23.2/org.apache.nifi.processors.standard.InvokeHTTP/index.html)
 
 <br>

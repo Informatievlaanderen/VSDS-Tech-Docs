@@ -9,7 +9,6 @@ nav_order: 5
 <b>LDIO Pipeline</b> <i></i> see [reference guide]() <br>
 <b>Apache Nifi Component Name:</b> <i>``</i> see [Apache Nifi reference guide]()
 
-
 The Linked Data Event Stream (LDES) [server](https://github.com/Informatievlaanderen/VSDS-LDESServer4J) is a configurable component that can be used to ingest, store, and (re-)publish one or multiple Linked Data Event Stream(s). The open-source LDES server is built in the context of the [VSDS project](https://www.vlaanderen.be/vlaamse-smart-data-space-portaal) to exchange (Open) Data easily.
 
 <p align="center"><img src="https://informatievlaanderen.github.io/VSDS-Tech-Docs/assets/images/LDES%20server.png" width="60%" text-align="center"></p>
