@@ -7,7 +7,7 @@ parent: 4. Output components
 # Repository Materialiser
 
 <b>LDIO Component Name:</b> <i>`Ldio:RepositoryMaterialiser`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-outputs/ldio-repository-materialiser) <br>
-<b>Apache Nifi Component Name:</b> <i>`RepositoryMaterialiser` </i> see [reference guide]()
+<b>Apache Nifi Component Name:</b> <i>`RepositoryMaterialiser` </i> see [reference guide](https://s01.oss.sonatype.org/#nexus-search;gav~be.vlaanderen.informatievlaanderen.ldes.ldi.nifi~nifi-rdf4j-repository-materialisation-processor~~~~kw,versionexpand)
 
 <br>
 

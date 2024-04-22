@@ -7,7 +7,7 @@ title: SPARQL Construct
 # SPARQL Construct
 
 <b>LDIO Component Name:</b> <i>`Ldio:SparqlConstructTransformer`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-transformers/ldio-sparql-construct) <br>
-<b>Apache Nifi Component Name:</b> <i>`SPARQL Interactions Processors`</i> see [reference guide]()
+<b>Apache Nifi Component Name:</b> <i>`SPARQL Interactions Processors`</i> see [reference guide](https://s01.oss.sonatype.org/#nexus-search;gav~be.vlaanderen.informatievlaanderen.ldes.ldi.nifi~sparql-interactions-processor~~~~kw,versionexpand)
 
 
 
