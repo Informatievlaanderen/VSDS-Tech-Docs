@@ -8,7 +8,7 @@ title: NGSI V2 to LD Adapter
 
 <b>LDIO Component Name:</b> <i>`Ldio:NgsiV2ToLdAdapter`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-adapters/ldio-ngsiv2-to-ld) <br>
 <b>Apache Nifi Component Name:</b> <i>`
-NgsiV2ToLdAdapter Processor` </i> see [reference guide]()
+NgsiV2ToLdAdapter Processor` </i> see [reference guide](https://s01.oss.sonatype.org/#nexus-search;gav~be.vlaanderen.informatievlaanderen.ldes.ldi.nifi~ngsiv2-to-ld-processor~~~~kw,versionexpand)
 
 This adapter will transform a [NGSI V2] input into [NGSI LD]. NGSI v2 is intended to manage the entire lifecycle of context information, including updates, queries, registrations, and subscriptions.
 

@@ -9,7 +9,7 @@ nav_order: 3
 
 <b>LDIO Component Name:</b> <i>`Ldio:LdioHttpIn`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-inputs/ldio-http-in) <br>
 
-<b>Apache Nifi Component Name:</b> <i>`InvokeHTTP`</i> see [Apache Nifi reference guide]()
+<b>Apache Nifi Component Name:</b> <i>`InvokeHTTP`</i> see [Apache Nifi reference guide](https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi/nifi-standard-nar/1.17.0/org.apache.nifi.processors.standard.InvokeHTTP/index.html)
 
 <br>
 

@@ -1,7 +1,7 @@
 #  Archive file in
 
 <b>LDIO Component Name:</b> <i>`Ldio:LdioArchiveFileIn`</i> see [reference guide](https://informatievlaanderen.github.io/VSDS-Linked-Data-Interactions/ldio/ldio-inputs/ldio-archive-file-in) <br>
-<b>Apache Nifi Component Name:</b> <i>`ArchiveFileIn` </i> see [Apache Nifi reference guide]()
+<b>Apache Nifi Component Name:</b> <i>`ArchiveFileIn` </i> see [Apache Nifi reference guide](https://s01.oss.sonatype.org/#nexus-search;gav~be.vlaanderen.informatievlaanderen.ldes.ldi.nifi~archive-file-in)
 
 
 <br>
