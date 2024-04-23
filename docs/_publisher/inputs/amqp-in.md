@@ -19,7 +19,7 @@ an [AMQP 1.0 queue](https://www.amqp.org/resources/specifications).
 
 ```mermaid
 graph LR
-    L[AMQP broker] --> H[KAMQP message In]
+    L[AMQP broker] --> H[AMQP message In]
     H --> S[LDES server]
 
     subgraph Publishing Pipeline
