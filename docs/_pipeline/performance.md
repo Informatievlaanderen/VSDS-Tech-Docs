@@ -72,10 +72,10 @@ All results show the average values of all test runs in members per second. For 
 #### Sequential Ingest Speed Test
 
 |||High-end|Mid-range|Low-end|
-|-|-|-|-|-|
-|1 pipeline||2,451|883||
-|2 pipelines||4,348|1,525||
-|4 pipelines||4,928|1,919||
+|-|-|-|-|
+|1 pipeline|2,451|883||
+|2 pipelines|4,348|1,525||
+|4 pipelines|4,928|1,919||
 
 > **Note** that we see a performance increase of 70% to 100% for the high-end and even up to 120% increase for the mid-range environment when multiple pipelines are used on a system which has enough cores.
 
@@ -84,10 +84,10 @@ The original target ingest rate of 100K members/minute is feasible and even larg
 #### Sequential Fragment Speed Test
 
 |||High-end|Mid-range|Low-end|
-|-|-|-|-|-|
-|1 view||1,975|329||
-|2 views||1,530|309||
-|4 views||694|260||
+|-|-|-|-|
+|1 view|1,975|329||
+|2 views|1,530|309||
+|4 views|694|260||
 
 > **Note** that the performance increase is 55% & 41% (high-end case) and 88% & 216% (mid-range case) for 2 resp. 4 views at once.
 
@@ -134,15 +134,15 @@ Because the partitioning is not that much slower when done in parallel we recomm
 > **Note** that we are aware of some improvements which may affect the fetch measurements below in a positive way (possibly by 40% - 60%).
 
 |||High-end|Mid-range|Low-end|
-|-|-|-|-|-|
-|10 mpp||2,242|698||
-|100 mpp||3,051|1,342||
-|250 mpp||3,051|1,434||
-|500 mpp||2,984|1,375||
-|1000 mpp||2,844|1,252||
-|2500 mpp||2,500|1,179||
-|5000 mpp||2,470|1,024||
-|10000 mpp||2,345|1,121||
+|-|-|-|-|
+|10 mpp|2,242|698||
+|100 mpp|3,051|1,342||
+|250 mpp|3,051|1,434||
+|500 mpp|2,984|1,375||
+|1000 mpp|2,844|1,252||
+|2500 mpp|2,500|1,179||
+|5000 mpp|2,470|1,024||
+|10000 mpp|2,345|1,121||
 
 > **Note** that the optimal fetch speed is 250 members per page (for a linked data model of about 30 triples). Using a small page size (e.g. 10 mpp) is 25% - 50% slower. Using larger page size (> 1000 mpp) typically decreases the fetch rate by 20% - 30 %.
 
