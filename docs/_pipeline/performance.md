@@ -71,7 +71,7 @@ All results show the average values of all test runs in members per second. For 
 
 #### Sequential Ingest Speed Test
 
-|||High-end|Mid-range|Low-end|
+||High-end|Mid-range|Low-end|
 |-|-|-|-|
 |1 pipeline|2,451|883||
 |2 pipelines|4,348|1,525||
@@ -83,7 +83,7 @@ The original target ingest rate of 100K members/minute is feasible and even larg
 
 #### Sequential Fragment Speed Test
 
-|||High-end|Mid-range|Low-end|
+||High-end|Mid-range|Low-end|
 |-|-|-|-|
 |1 view|1,975|329||
 |2 views|1,530|309||
@@ -133,7 +133,7 @@ Because the partitioning is not that much slower when done in parallel we recomm
 
 > **Note** that we are aware of some improvements which may affect the fetch measurements below in a positive way (possibly by 40% - 60%).
 
-|||High-end|Mid-range|Low-end|
+||High-end|Mid-range|Low-end|
 |-|-|-|-|
 |10 mpp|2,242|698||
 |100 mpp|3,051|1,342||
