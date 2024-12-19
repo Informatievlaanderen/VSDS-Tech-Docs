@@ -18,10 +18,16 @@ Depending on your data set you may first ingest all members by only defining a L
 
 In order to test the server's performance we defined a [test plan](#what---test-plan), setup a controlled [test environment](#where---test-environment), created a number of [tests](#how---test-method) and executed these tests while collecting some basic statistics.
 
+### TL;DR
+Recommendations:
+* make sure to allocate enough memory to the server to allow ingesting fast moving data to the same or different data set in parallel at a higher rate
+* define all the required views before ingesting your data as it is faster to fragment all the views at once
+* set the page size for a view to an order of magnitude of thousands to ten thousands of triples to have the highest possible fragment retrieval rate
+
 If you only care about the numbers, you can skip the following sections and find the results [below](#results).
 
 ### What and why? - Test Plan
-Data sets come in all shapes and sizes, some are small while other are huge and some are fast, slow or even non-moving. Obviously, this impacts how fast you need to be able to ingest and store the data.
+Data sets come in all shapes and sizes, some are small while other are huge and some are fast, slow or even non-moving. Obviously, this impacts how fast you need to be able to ingest and store the data. We do our tests with a data member of about 30 triples (the OSLO traffic dat model).
 
 As said, the ingesting and storing runs separately from the partitioning (fragmentation) and we can configure the system in such a way that it does these two tasks either separately or together. So, we measure the ingest speed and the fragmentation speed both sequentially and in parallel. In addition, as the LDES server can accept multiple HTTP connection at the same time we also measure the effect of ingesting data from one vs. multiple clients/pipelines.
 
@@ -47,9 +53,6 @@ To simulate a high-end deployment environment we used a MacBook Pro (Apple M2 pr
 #### Mid-range Test Environment
 For a typical deployment environment we used a cloud environment where we had two separate clusters: one for the (postgres) database and one for all our other services. The database cluster is a single node [t4g.medium instance](https://aws.amazon.com/rds/instance-types/)(2 vCPU and 4 GiB system), while the other services used a dual node [m5.2xlarge instance](https://aws.amazon.com/ec2/instance-types/m5/) (8 vCPU and 32 GiB system). We used ArgoCD and terraform for the deployment in this environment.
 
-#### Low-End Test Environment
-Some environments may not need the raw power or may even have a very tight budget. For that reason we also tested the performance on a Raspberry PI model 4 with 8GiB RAM (quad-core), deploying all services locally using docker compose.
-
 ### How? - Test Method
 To write and run the actual tests we used [JMeter](https://jmeter.apache.org/). In addition, we created and used a small management tool ([JMeter Runner](https://github.com/Informatievlaanderen/jmeter-runner)) to schedule tests, cancel or delete tests, follow up the running tests and view tests results.
 
@@ -65,88 +68,90 @@ We run the following tests in seven test runs to have a few statistical values, 
 The test definitions and the instructions to run these tests locally can be found [here](https://github.com/Informatievlaanderen/VSDS-LDES-performance-testing/tree/main/load-testing/server) while the docker compose file and related files can be found [one level up](https://github.com/Informatievlaanderen/VSDS-LDES-performance-testing/tree/main/load-testing).
 
 ### Results
-All results show the average values of all test runs in members per second. For details we would like to refer you to [the results source](https://github.com/Informatievlaanderen/VSDS-LDES-performance-testing/blob/main/load-testing/server/results.xlsx). We have tested our reference image ([3.5.0](https://hub.docker.com/r/ldes/ldes-server/tags)) of the LDES Server.
-
-> **Note** that the low-end numbers are not yet available and may change the conclusions below.
+All results show the average values of all test runs in members per second (rounded to the nearest tens). For details we would like to refer you to [the results source](https://github.com/Informatievlaanderen/VSDS-LDES-performance-testing/blob/main/load-testing/server/results.xlsx). We have tested our reference image ([3.6.0](https://hub.docker.com/r/ldes/ldes-server/tags)) of the LDES Server.
 
 #### Sequential Ingest Speed Test
 
-||High-end|Mid-range|Low-end|
-|-|-|-|-|
-|1 pipeline|2,451|883||
-|2 pipelines|4,348|1,525||
-|4 pipelines|4,928|1,919||
+||High-end|Mid-range|
+|-|-:|-:|
+|1 pipeline|2100|890|
+|2 pipelines|3780|1620|
+|4 pipelines|4160|1850|
 
-> **Note** that we see a performance increase of 70% to 100% for the high-end and even up to 120% increase for the mid-range environment when multiple pipelines are used on a system which has enough cores.
+> **Note** that we see a performance increase of 80% to 100% for the high-end and even up to 110% increase for the mid-range environment when multiple pipelines are used on a system which has enough cores.
 
-The original target ingest rate of 100K members/minute is feasible and even largely surpassed with 147K members/minute. This proves that the LDES Server ingest task is fast enough given enough resources. So, given that enough memory is assigned to the LDES server, you can use multiple pipelines to ingest the same or different data set at the same time.
+The original target ingest rate of 100K members/minute is feasible and even largely surpassed with 250K members/minute given a high-end system using multiple pipelines. This means that theoretically you can ingest 15M members/hour, which is 360M members/day and boils down to more than a dazzling 130 billion members/year! We have not tried this but we currently do have installations with more than 70M members.
+
+**Conclusion**: the LDES Server ingest task is fast enough given enough resources (memory) so you can use multiple pipelines to ingest the same or different data set at the same time.
 
 #### Sequential Fragment Speed Test
 
-||High-end|Mid-range|Low-end|
-|-|-|-|-|
-|1 view|1,975|329||
-|2 views|1,530|309||
-|4 views|694|260||
+||High-end|Mid-range|
+|-|-:|-:|
+|1 view|1920|650|
+|2 views|1750|550|
+|4 views|810|380|
 
-> **Note** that the performance increase is 55% & 41% (high-end case) and 88% & 216% (mid-range case) for 2 resp. 4 views at once.
+> **Note** that the performance increase is 80% & 70% (high-end case) and 70% & 130% (mid-range case) for 2 resp. 4 views at once because more work is done at the same time.
 
-Although the raw numbers seem to indicate a performance loss, the work done for 2 and 4 views is double resp. quadruple. So, there is in fact an increase in performance when doing the fragmentation for the views in parallel vs. if we would have to fragment multiple views sequentially. This means that it is faster to fragment all the views at once, so if you know that you will need multiple views, you can define them all before ingestion.
+Although the raw numbers seem to indicate a performance loss, the work done for 2 and 4 views is double resp. quadruple. So, there is in fact an increase in performance when doing the fragmentation for the views in parallel vs. if we would have to fragment multiple views sequentially.
+
+**Conclusion**: it is faster to fragment all the views at once, so if you know that you will need multiple views, you can define them all before ingestion.
 
 #### Parallel Ingest Speed Test
 
-|||High-end|Mid-range|Low-end|
-|-|-|-|-|-|
-|1 pipeline|1 view|2,394|835||
-|2 pipelines|1 view|4,204|1,451||
-|4 pipelines|1 view|4,997|1,933||
-|1 pipeline|2 views|1,970|775||
-|2 pipelines|2 views|3,242|1,363||
-|4 pipelines|2 views|4,286|1,891||
-|1 pipeline|4 views|1,046|693||
-|2 pipelines|4 views|1,965|1,229||
-|4 pipelines|4 views|3,329|1,779||
+|||High-end|Mid-range|
+|-|-|-:|-:|
+|1 pipeline|1 view|2020|810|
+|2 pipelines|1 view|3630|1510|
+|4 pipelines|1 view|4300|1780|
+|1 pipeline|2 views|1680|740|
+|2 pipelines|2 views|2690|1410|
+|4 pipelines|2 views|3380|1640|
+|1 pipeline|4 views|990|630|
+|2 pipelines|4 views|1760|1180|
+|4 pipelines|4 views|2070|1300|
 
-> **Note** that the ingest speed is typically slower if done in parallel with the fragmentation task, with the ingest speed decreasing more when fragmenting multiple views. The performance decrease is up to 57% for high-end systems when ingesting using a single pipeline and fragmenting 4 views. For a mid-range system this is only 22%.
+> **Note** that the ingest speed is typically slower if done in parallel with the fragmentation task, with the ingest speed decreasing more when fragmenting multiple views. The performance decrease is up to 55% for high-end systems when ingesting using a single pipeline and fragmenting 4 views. For a mid-range system this is only 30%.
 
-But as the ingest speed is overall larger than the fragmentation speed, it may still be a good choice to ingest in parallel.
+**Conclusion**: allthough the ingest speed is overall higher than the fragmentation speed, it still may be a good choice to ingest in parallel if possible.
 
 #### Parallel Fragmentation Speed Test
 
-|||High-end|Mid-range|Low-end|
-|-|-|-|-|-|
-|1 view|1 pipeline|1,728|316||
-|2 views|1 pipeline|1,411|288||
-|4 views|1 pipeline|631|240||
-|1 view|2 pipelines|2,007|314||
-|2 views|2 pipelines|1,394|289||
-|4 views|2 pipelines|624|242||
-|1 view|4 pipelines|1,807|312||
-|2 views|4 pipelines|1,380|286||
-|4 views|4 pipelines|581|241||
+|||High-end|Mid-range|
+|-|-|-:|-:|
+|1 view|1 pipeline|1860|560|
+|2 views|1 pipeline|1410|470|
+|4 views|1 pipeline|710|320|
+|1 view|2 pipelines|1840|560|
+|2 views|2 pipelines|1370|470|
+|4 views|2 pipelines|730|330|
+|1 view|4 pipelines|1760|560|
+|2 views|4 pipelines|1360|470|
+|4 views|4 pipelines|700|330|
 
-> **Note** that the fragmentation speed is also slower than the ingest speed when doen in parallel but it is less noticable with a decrease of up to 16% for a high-end system and only up to 8% for a mid-range one.
+> **Note** that the number of pipelines does not affect the fragmentation speed, i.e. the numbers are almost identical for the same number of views. This is the case because the fragmentation process runs as a background task independant from the ingestion process.
 
-Because the partitioning is not that much slower when done in parallel we recommend to do the ingest and fragmentation in parallel unless really needed. You can do them sequentially as described [above](#ldes-server-performance).
+> **Note** that the fragmentation speed is also slower than the ingest speed when done in parallel but it is less noticable with a decrease of up to 25% for a high-end system and only up to 15% for a mid-range one.
+
+**Conclusion**: because the partitioning is not that much slower when done in parallel we recommend to do the ingest and fragmentation in parallel. If really needed, you can do them sequentially as described [above](#ldes-server-performance).
 
 #### Fetch Speed Test
 
-> **Note** that we are aware of some improvements which may affect the fetch measurements below in a positive way (possibly by 40% - 60%).
+||High-end|Mid-range|
+|-|-:|-:|
+|10 mpp|2510|1030|
+|100 mpp|3670|1690|
+|250 mpp|3590|1760|
+|500 mpp|3400|1760|
+|1000 mpp|3050|1680|
+|2500 mpp|2870|1500|
+|5000 mpp|2740|1430|
+|10000 mpp|2610|1380|
 
-||High-end|Mid-range|Low-end|
-|-|-|-|-|
-|10 mpp|2,242|698||
-|100 mpp|3,051|1,342||
-|250 mpp|3,051|1,434||
-|500 mpp|2,984|1,375||
-|1000 mpp|2,844|1,252||
-|2500 mpp|2,500|1,179||
-|5000 mpp|2,470|1,024||
-|10000 mpp|2,345|1,121||
+> **Note** that the optimal fetch speed is 250 members per page (for a linked data model of about 30 triples). Depending on the system sizing we see that 100 members/page and 500 members/page give comparable results. Using a small page size (i.e. 10 mpp) is 30% - 40% slower. Using larger page size (> 1000 mpp) typically decreases the fetch rate by 15% - 30 %.
 
-> **Note** that the optimal fetch speed is 250 members per page (for a linked data model of about 30 triples). Using a small page size (e.g. 10 mpp) is 25% - 50% slower. Using larger page size (> 1000 mpp) typically decreases the fetch rate by 20% - 30 %.
-
-The ideal page size is 100 mpp - 1000 mpp for a 30 triples data model meaning that the ideal fragment size is order of magnitude of thousands to ten thousands of triples. You may need to experiment a bit by creating a few views with a different page member count, but the usual default that we recommend is 250 mpp.
+**Conclusion**: the ideal page size is 100 mpp - 1000 mpp for a 30 triples data model meaning that the ideal fragment size is order of magnitude of thousands to ten thousands of triples. You may need to experiment a bit by creating a few views with a different page member count, but the usual default that we recommend is 250 mpp.
 
 ## LDES Client Performance
 > Not yet available
