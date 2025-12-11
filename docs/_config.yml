@@ -19,25 +19,11 @@ callouts:
 
 # Define Jekyll collections
 collections:
-  basic:
-    permalink: "/:collection/:path"
-    output: true
-  pipeline:
-    permalink: "/:collection/:path"
-    output: true
-  publisher:
-    permalink: "/:collection/:path"
-    output: true
-  consumer:
-    permalink: "/:collection/:path"
-    output: true
-  intermediary:
-    permalink: "/:collection/:path"
-    output: true
+
 
 # Enable or disable the site search
 # Supports true (default) or false
-search_enabled: true
+search_enabled: false
 search:
   # Split pages into sections that can be searched individually
   # Supports 1 - 6, default: 2
@@ -64,16 +50,7 @@ search:
 
 just_the_docs:
   collections:
-    basic:
-      name: Basic concepts
-    pipeline:
-      name: General Pipeline
-    publisher:
-      name: Publishing Pipeline
-    consumer:
-      name: Consuming Pipeline
-    intermediary:
-      name: Intermediary Pipeline
+
 
 enable_copy_code_button: true
 
@@ -82,7 +59,7 @@ footer_content: " "
 header_pages: [test.html]
 
 # Footer "Edit this page on GitHub" link text
-gh_edit_link: true # show or hide edit this page link
+gh_edit_link: false # show or hide edit this page link
 # gh_edit_link_text: "Contribute on GitHub"
 # gh_edit_repository: "https://github.com/Informatievlaanderen/VSDS-Linked-Data-Interactions" # the github URL for your repo
 gh_edit_branch: "develop" # the branch that your docs is served from
